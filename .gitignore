@@ -1,5 +1,41 @@
-.pio
-.vscode/.browse.c_cpp.db*
-.vscode/c_cpp_properties.json
-.vscode/launch.json
-.vscode/ipch
+# =========================
+# PlatformIO
+# =========================
+.pio/
+.vscode/
+
+# =========================
+# Build artifacts
+# =========================
+build/
+*.elf
+*.hex
+*.bin
+*.map
+
+# =========================
+# OS / Editor junk
+# =========================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Temporary files
+# =========================
+.tmp/
+.temp/
+.cache/
+
+# =========================
+# Optional: local secrets
+# =========================
+secrets.h
+wifi_credentials.h

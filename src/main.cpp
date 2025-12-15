@@ -1,5 +1,8 @@
 #include <Arduino.h>
 
+enum State {MENU, SNAKE, TETRICORE, PONG, BREAKOUT};
+State currentStae = MENU;
+
 // put function declarations here:
 int myFunction(int, int);
 
