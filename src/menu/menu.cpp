@@ -15,13 +15,19 @@ void initMenu() {
 }
 
 void updateMenu() {
-    if (btnUp()) {
-        menuIndex = (menuIndex - 1 + MENU_COUNT) % MENU_COUNT;
+    if (isPressed(BTN_UP)) {
+        menuIndex--;
+        if (menuIndex < 0) {
+            menuIndex = MENU_COUNT - 1;
+        }
     }
-    if (btnDown()) {
-        menuIndex = (menuIndex + 1) % MENU_COUNT;
+    if (isPressed(BTN_DOWN)) {
+        menuIndex++;
+        if (menuIndex >= MENU_COUNT) {
+            menuIndex = 0;
+        }
     }
-    if (btnA()) {
+    if (isPressed(BTN_A)) {
         switch (menuIndex) {
             case 0: 
             currentState = SNAKE; 

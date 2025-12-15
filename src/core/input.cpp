@@ -1,50 +1,44 @@
 #include <Arduino.h>
 #include "input.h"
 
-#define BTN_UP 14 // D5
-#define BTN_DOWN 12 // D6
-#define BTN_B 0 // D3
-#define BTN_A 16 // D8
+#define PIN_UP 14 // D5
+#define PIN_DOWN 12 // D6
+#define PIN_LEFT 13 // D7
+#define PIN_RIGHT 2 // D4
+#define PIN_B 0 // D3
+#define PIN_A 16 // D0
 
-bool upPressed, downPressed, bPressed, aPressed;
-bool upPrev, downPrev, bPrev, aPrev;
+static const uint8_t buttonPins[BTN_COUNT] = {
+  PIN_UP,
+  PIN_DOWN,
+  PIN_LEFT,
+  PIN_RIGHT,
+  PIN_A,
+  PIN_B
+};
+
+static bool current[BTN_COUNT];
+static bool prev[BTN_COUNT];
 
 void initInput() {
-    pinMode(BTN_UP, INPUT_PULLUP);
-    pinMode(BTN_DOWN, INPUT_PULLUP);
-    pinMode(BTN_B, INPUT_PULLUP);
-    pinMode(BTN_A, INPUT_PULLUP);
+    for (int i = 0; i < BTN_COUNT; i++) {
+        pinMode(buttonPins[i], INPUT_PULLUP);
+        current[i] = false;
+        prev[i] = false;
+    }
 }
 
 void updateInput() {
-    bool upNow = !digitalRead(BTN_UP);
-    bool downNow = !digitalRead(BTN_DOWN);
-    bool bNow = !digitalRead(BTN_B);
-    bool aNow = !digitalRead(BTN_A);
-
-    upPressed = upNow && !upPrev;
-    downPressed = downNow && !downPrev;
-    bPressed = bNow && !bPrev;
-    aPressed = aNow && !aPrev;
-
-    upPrev = upNow;
-    downPrev = downNow;
-    bPrev = bNow;
-    aPrev = aNow;
+    for (int i = 0; i < BTN_COUNT; i++) {
+        prev[i] = current[i];
+        current[i] = (digitalRead(buttonPins[i]) == LOW);
+    }
 }
 
-bool btnUp() {
-    return upPressed;
+bool isPressed(Button x) {
+    return current[x] && !prev[x];
 }
 
-bool btnDown() {
-    return downPressed;
-}
-
-bool btnB() {
-    return bPressed;
-}
-
-bool btnA() {
-    return aPressed;
+bool isHeld(Button x) {
+    return current[x];
 }
