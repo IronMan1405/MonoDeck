@@ -1,21 +1,44 @@
 #include <Arduino.h>
-
-enum State {MENU, SNAKE, TETRICORE, PONG, BREAKOUT};
-State currentStae = MENU;
-
-// put function declarations here:
-int myFunction(int, int);
+#include "core/app_state.h"
+#include "menu/menu.h"
+#include "core/display.h"
+#include "core/input.h"
 
 void setup() {
   // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  initDisplay();
+  initInput();
+  initMenu();
+  currentState = MENU;
+  Serial.begin(115200);
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  updateInput();
+  switch (currentState) {
+    case BOOT:
+      currentState = MENU;
+      break;
+    case MENU:
+      updateMenu();
+      drawMenu();
+      break;
+    case SNAKE:
+      // updateSnake();
+      // drawSnake();
+      break;
+    case PONG:
+      // updatePong();
+      // drawPong();
+      break;
+    case BREAKOUT:
+      // updateBreakout();
+      // drawBreakout();
+      break;
+    case TETRICORE:
+      // updateTetricore();
+      // drawTetricore();
+      break;
+  }
 }
