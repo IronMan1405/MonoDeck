@@ -31,7 +31,10 @@ void initInput() {
 void updateInput() {
     for (int i = 0; i < BTN_COUNT; i++) {
         prev[i] = current[i];
-        current[i] = (digitalRead(buttonPins[i]) == LOW);
+        current[i] = false;
+        if (digitalRead(buttonPins[i]) == LOW) {
+            current[i] = true;
+        }
     }
 }
 
