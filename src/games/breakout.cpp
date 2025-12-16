@@ -3,6 +3,7 @@
 #include "core/display.h"
 #include "core/input.h"
 #include "core/app_state.h"
+#include "core/engine.h"
 
 static bool canExit = true;
 
@@ -19,7 +20,7 @@ void updateBreakout() {
 
     if (canExit && isPressed(BTN_B)) {
         canExit = false;
-        currentState = MENU;
+        requestExitToMenu();
         return;
     }
 }

@@ -1,9 +1,12 @@
 #include <Arduino.h>
+
 #include "core/app_state.h"
 #include "menu/menu.h"
 #include "core/display.h"
 #include "core/input.h"
 #include "core/timing.h"
+#include "core/engine.h"
+
 
 #include "games/snake.h"
 #include "games/breakout.h"
@@ -51,5 +54,10 @@ void loop() {
       updateTetricore();
       drawTetricore();
       break;
+  }
+  if (gameWantsExit) {
+    gameWantsExit = false;
+    initMenu();
+    currentState = MENU;
   }
 }

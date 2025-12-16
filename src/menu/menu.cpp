@@ -3,6 +3,7 @@
 #include "core/app_state.h"
 #include "core/display.h"
 #include "core/input.h"
+#include "core/engine.h"
 
 #include "games/snake.h"
 #include "games/breakout.h"
@@ -11,27 +12,27 @@
 
 #define LINE_Y(i) ((i) * 10)
 
-int menuIndex = 0;
+int gameIndex = 0;
 const int MENU_COUNT = 4;
 
 static bool canEnter = true;
 
 void initMenu() {
-    menuIndex = 0;
+    gameIndex = 0;
     canEnter = false;
 }
 
 void updateMenu() {
     if (isPressed(BTN_UP)) {
-        menuIndex--;
-        if (menuIndex < 0) {
-            menuIndex = MENU_COUNT - 1;
+        gameIndex--;
+        if (gameIndex < 0) {
+            gameIndex = MENU_COUNT - 1;
         }
     }
     if (isPressed(BTN_DOWN)) {
-        menuIndex++;
-        if (menuIndex >= MENU_COUNT) {
-            menuIndex = 0;
+        gameIndex++;
+        if (gameIndex >= MENU_COUNT) {
+            gameIndex = 0;
         }
     }
     
@@ -41,25 +42,7 @@ void updateMenu() {
 
     if (canEnter && isPressed(BTN_A)) {
         canEnter = false;
-
-        switch (menuIndex) {
-            case 0: 
-                currentState = SNAKE; 
-                initSnake();
-                break;
-            case 1:
-                currentState = BREAKOUT;
-                initBreakout();
-                break;
-            case 2:
-                currentState = PONG;
-                initPong();
-                break;
-            case 3:
-                currentState = TETRICORE;
-                initTetricore();
-                break;
-        }
+        launchGame(gameIndex);
         return;
     }
 }
@@ -76,7 +59,7 @@ void drawMenu() {
 
     display.drawLine(0, 28, 127, 28, SH110X_WHITE);
     
-    const char* menuItems[] = {
+    const char* gameNames[] = {
         "Snake",
         "Breakout",
         "Pong",
@@ -87,12 +70,12 @@ void drawMenu() {
 
     for (int i = 0; i < MENU_COUNT; i++) {
         display.setCursor(0, 32 + LINE_Y(i));
-        if (i == menuIndex) {
+        if (i == gameIndex) {
             display.print("> ");
         } else {
             display.print("  ");
         }
-        display.println(menuItems[i]);
+        display.println(gameNames[i]);
     }
     display.display();
 }
