@@ -6,7 +6,7 @@
 #include "core/input.h"
 #include "core/timing.h"
 #include "core/engine.h"
-
+#include "core/boot.h"
 
 #include "games/snake.h"
 #include "games/breakout.h"
@@ -17,9 +17,8 @@ void setup() {
   // put your setup code here, to run once:
   initDisplay();
   initInput();
-  initMenu();
-  currentState = MENU;
-  Serial.begin(115200);
+  initBoot();
+  currentState = BOOT;
 }
 
 void loop() {
@@ -32,7 +31,8 @@ void loop() {
 
   switch (currentState) {
     case BOOT:
-      currentState = MENU;
+      updateBoot();
+      drawBoot();
       break;
     case MENU:
       updateMenu();

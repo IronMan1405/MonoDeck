@@ -10,6 +10,8 @@
 #include "games/pong.h"
 #include "games/tetricore.h"
 
+#include "assets/monodeck_logo_64x32.h"
+
 #define LINE_Y(i) ((i) * 10)
 
 int gameIndex = 0;
@@ -50,14 +52,9 @@ void updateMenu() {
 void drawMenu() {
     display.clearDisplay();
 
-    display.setTextSize(2);
-    display.setCursor(36, 0);
-    display.println("Mono");
-    display.setTextSize(1);
-    display.setCursor(58, 16);
-    display.println("Deck");
+    display.drawBitmap(28, 0, monodeck_logo_64x32, MONODECK_LOGO_W2, MONODECK_LOGO_H2, SH110X_WHITE);
 
-    display.drawLine(0, 28, 127, 28, SH110X_WHITE);
+    // display.drawLine(0, 24, 127, 24, SH110X_WHITE);
     
     const char* gameNames[] = {
         "Snake",
@@ -69,7 +66,7 @@ void drawMenu() {
     display.setTextSize(1);
 
     for (int i = 0; i < MENU_COUNT; i++) {
-        display.setCursor(0, 32 + LINE_Y(i));
+        display.setCursor(0, 28 + LINE_Y(i));
         if (i == gameIndex) {
             display.print("> ");
         } else {
