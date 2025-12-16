@@ -6,15 +6,15 @@
 #define PIN_LEFT 13 // D7
 #define PIN_RIGHT 2 // D4
 #define PIN_B 0 // D3
-#define PIN_A 16 // D0
+#define PIN_A 9 // SD2
 
 static const uint8_t buttonPins[BTN_COUNT] = {
   PIN_UP,
   PIN_DOWN,
   PIN_LEFT,
   PIN_RIGHT,
-  PIN_A,
-  PIN_B
+  PIN_B,
+  PIN_A
 };
 
 static bool current[BTN_COUNT];
@@ -31,10 +31,7 @@ void initInput() {
 void updateInput() {
     for (int i = 0; i < BTN_COUNT; i++) {
         prev[i] = current[i];
-        current[i] = false;
-        if (digitalRead(buttonPins[i]) == LOW) {
-            current[i] = true;
-        }
+        current[i] = (digitalRead(buttonPins[i]) == LOW);
     }
 }
 

@@ -4,14 +4,21 @@
 #include "core/display.h"
 #include "core/input.h"
 
-#define LINE_Y(i) ((i) * 10)
+#include "games/snake.h"
+#include "games/breakout.h"
+#include "games/pong.h"
+#include "games/tetricore.h"
 
+#define LINE_Y(i) ((i) * 10)
 
 int menuIndex = 0;
 const int MENU_COUNT = 4;
 
+static bool canEnter = true;
+
 void initMenu() {
     menuIndex = 0;
+    canEnter = false;
 }
 
 void updateMenu() {
@@ -27,21 +34,33 @@ void updateMenu() {
             menuIndex = 0;
         }
     }
-    if (isPressed(BTN_A)) {
+    
+    if (!isHeld(BTN_A)) {
+        canEnter = true;
+    }
+
+    if (canEnter && isPressed(BTN_A)) {
+        canEnter = false;
+
         switch (menuIndex) {
             case 0: 
-            currentState = SNAKE; 
-            break;
+                currentState = SNAKE; 
+                initSnake();
+                break;
             case 1:
-            currentState = BREAKOUT;
-            break;
+                currentState = BREAKOUT;
+                initBreakout();
+                break;
             case 2:
-            currentState = PONG;
-            break;
+                currentState = PONG;
+                initPong();
+                break;
             case 3:
-            currentState = TETRICORE;
-            break;
+                currentState = TETRICORE;
+                initTetricore();
+                break;
         }
+        return;
     }
 }
 
