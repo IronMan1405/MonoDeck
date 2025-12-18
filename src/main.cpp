@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <EEPROM.h>
 
 #include "core/app_state.h"
 #include "menu/menu.h"
@@ -8,13 +9,14 @@
 #include "core/engine.h"
 #include "core/boot.h"
 
-#include "games/snake.h"
-#include "games/breakout.h"
-#include "games/pong.h"
-#include "games/tetricore.h"
+#include "games/snake/snake.h"
+#include "games/breakout/breakout.h"
+#include "games/pong/pong.h"
+#include "games/tetricore/tetricore.h"
 
 void setup() {
   // put your setup code here, to run once:
+  EEPROM.begin(64);
   initDisplay();
   initInput();
   initBoot();

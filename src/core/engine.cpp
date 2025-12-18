@@ -4,10 +4,10 @@
 #include "core/game_registry.h"
 #include "menu/menu.h"
 
-#include "games/snake.h"
-#include "games/breakout.h"
-#include "games/pong.h"
-#include "games/tetricore.h"
+#include "games/snake/snake.h"
+#include "games/breakout/breakout.h"
+#include "games/pong/pong.h"
+#include "games/tetricore/tetricore.h"
 
 int currentGame = -1;
 bool gameWantsExit = false;

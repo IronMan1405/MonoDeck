@@ -1,9 +1,9 @@
 #include "game_registry.h"
 
-#include "games/snake.h"
-#include "games/pong.h"
-#include "games/breakout.h"
-#include "games/tetricore.h"
+#include "games/snake/snake.h"
+#include "games/pong/pong.h"
+#include "games/breakout/breakout.h"
+#include "games/tetricore/tetricore.h"
 
 Game games[] = {
     {   initSnake, updateSnake, drawSnake   },

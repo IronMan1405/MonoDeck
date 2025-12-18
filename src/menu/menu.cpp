@@ -5,10 +5,10 @@
 #include "core/input.h"
 #include "core/engine.h"
 
-#include "games/snake.h"
-#include "games/breakout.h"
-#include "games/pong.h"
-#include "games/tetricore.h"
+#include "games/snake/snake.h"
+#include "games/breakout/breakout.h"
+#include "games/pong/pong.h"
+#include "games/tetricore/tetricore.h"
 
 #include "assets/monodeck_logo_64x32.h"
 
