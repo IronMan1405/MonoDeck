@@ -37,7 +37,7 @@ static int score;
 
 enum SnakeState {SNAKE_PLAYING, SNAKE_OVER, SNAKE_TITLE, SNAKE_PAUSE};
 
-SnakeState snakeState = SNAKE_PLAYING;
+SnakeState snakeState = SNAKE_TITLE;
 
 static void handleSnakeInput();
 static void stepSnake();
