@@ -157,7 +157,7 @@ void updatePongBall() {
     if (ball.x <= 0 || ball.x >= SCREEN_WIDTH - ballSize) {
         ballSpeed.x = -ballSpeed.x;
     }
-    if (ball.y <= 0) {
+    if (ball.y <= ballSize) {
         ballSpeed.y = -ballSpeed.y;
     }
     if (ball.y > SCREEN_HEIGHT) {
@@ -241,9 +241,9 @@ void drawPongGameOver() {
     display.print("Score: ");
     display.print(score);
     
-    // display.setCursor(20, 44);
-    // display.print("High: ");
-    // display.print(highScore);
+    display.setCursor(20, 44);
+    display.print("High: ");
+    display.print(highScore);
 
     display.setCursor(5, 56);
     display.print("A:Title      B:Exit");
