@@ -107,6 +107,7 @@ ClearAnimState clearState = CLEAR_NONE;
 
 int clearRow = -1;
 unsigned long clearStart = 0;
+int pendingClearCount = 0;
 
 static void handleTetricoreInput();
 static void drawTetricoreGame();
@@ -122,6 +123,7 @@ static void moveRight();
 static void clearLines();
 static void actuallyClearRow(int y);
 static void tryRotate();
+static void applyTetrisScore(int lines);
 static bool canMove(int nx, int ny);
 static bool isRowFull(int y);
 static bool getCell(Shapes type, int rot, int x, int y);
@@ -215,6 +217,13 @@ void updateTetricore() {
             clearState = CLEAR_NONE;
             actuallyClearRow(clearRow);
             clearRow = -1;
+
+            clearLines();
+
+            if (clearState == CLEAR_NONE && pendingClearCount > 0) {
+                applyTetrisScore(pendingClearCount);
+                pendingClearCount = 0;
+            }
         }
         return;
     }
@@ -257,13 +266,9 @@ void handleTetricoreInput() {
         lastInput = millis();
     }
 
-    static bool rotatePressedLast = true;
-    bool rotateNow = isPressed(BTN_B);
-
-    if (rotateNow && !rotatePressedLast) {
+    if (isPressed(BTN_B)) {
         tryRotate();
     }
-    rotatePressedLast = rotateNow;
 }
 
 void tryMoveDown() {
@@ -303,19 +308,20 @@ void moveRight() {
 }
 
 void clearLines() {
+    pendingClearCount = 0;
+
     for (int y = GRID_H - 1; y >= 0; y--) {
         if (isRowFull(y)) {
             clearRow = y;
             clearState = CLEAR_FLASH;
             clearStart = millis();
+            pendingClearCount++;
             return;
         }
     }
 }
 
 void actuallyClearRow(int y) {
-    score += 100;
-    
     for (int ty = y; ty > 0; ty--) {
         for (int x = FIELD_X; x < FIELD_X + FIELD_W; x++) {
         grid[ty][x] = grid[ty-1][x];
@@ -323,6 +329,15 @@ void actuallyClearRow(int y) {
     }
     for (int x = FIELD_X; x < FIELD_X + FIELD_W; x++) {
         grid[0][x] = 0;
+    }
+}
+
+void applyTetrisScore(int lines) {
+    switch (lines) {
+        case 1: score += 100; break;
+        case 2: score += 300; break;
+        case 3: score += 500; break;
+        case 4: score += 800; break;
     }
 }
 
@@ -413,7 +428,7 @@ void drawBlock(int x, int y) {
     int py = y * CELL_SIZE;
 
     display.drawRect(px, py, CELL_SIZE, CELL_SIZE, SH110X_WHITE);
-    display.fillRect(px + 2, py + 2, CELL_SIZE - 4, CELL_SIZE - 4, SH110X_WHITE);
+    // display.fillRect(px + 2, py + 2, CELL_SIZE - 4, CELL_SIZE - 4, SH110X_WHITE);
 }
 
 void drawTetricoreGame() {
@@ -474,6 +489,11 @@ void drawTetricoreGame() {
             }
         }
     }
+
+    int boxW = SHAPE_SIZE * CELL_SIZE + 4;
+    int boxH = SHAPE_SIZE * CELL_SIZE + 4;
+
+    display.drawRect(PREVIEW_X - 2, PREVIEW_Y - 2, boxW, boxH, SH110X_WHITE);
 }
 
 void drawTetricoreTitle() {
