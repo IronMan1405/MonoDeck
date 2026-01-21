@@ -46,6 +46,7 @@ static void drawSnakeTitle();
 static void drawSnakeGameOver();
 static void drawSnakePause();
 
+
 void initSnake() {
     display.clearDisplay();
     display.display();
