@@ -53,7 +53,6 @@ void initSnake() {
     highScore = EEPROM.read(EEPROM_ADDR_HIGHSCORE);
     if (highScore < 0 || highScore > 999) highScore = 0;
 
-
     snakeState = SNAKE_TITLE;
 
     canExit = false;
