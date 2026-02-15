@@ -24,7 +24,9 @@ void platform_init(void) {
         BTN_B_PIN
     };
 
-    for (int i = 0; i < sizeof(buttons); i++) {
+    const size_t button_count = sizeof(buttons) / sizeof(buttons[0]);
+
+    for (int i = 0; i < button_count; i++) {
         gpio_init(buttons[i]);
         gpio_set_dir(buttons[i], GPIO_IN);
         gpio_pull_up(buttons[i]);

@@ -1,8 +1,8 @@
 #pragma once
 
 #define I2C_PORT i2c0
-#define I2C_SDA_PIN 4
-#define I2C_SCL_PIN 5
+#define I2C_SDA_PIN 8
+#define I2C_SCL_PIN 9
 #define I2C_BAUDRATE 400000
 #define DISPLAY_I2C_ADDRESS 0x3c
 

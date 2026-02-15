@@ -35,7 +35,11 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(MonoDeck_v2 MonoDeck_v2.c )
+add_executable(MonoDeck_v2 
+    MonoDeck_v2.c 
+    platform/platform_init.c
+    drivers/sh110x/sh110x.c
+)
 
 pico_set_program_name(MonoDeck_v2 "MonoDeck_v2")
 pico_set_program_version(MonoDeck_v2 "0.1")
@@ -50,7 +54,9 @@ target_link_libraries(MonoDeck_v2
 
 # Add the standard include files to the build
 target_include_directories(MonoDeck_v2 PRIVATE
-        ${CMAKE_CURRENT_LIST_DIR}
+        ${CMAKE_CURRENT_LIST_DIR}/platform
+        ${CMAKE_CURRENT_LIST_DIR}/drivers
+        ${CMAKE_CURRENT_LIST_DIR}/drivers/sh110x
 )
 
 # Add any user requested libraries
