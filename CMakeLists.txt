@@ -38,7 +38,18 @@ pico_sdk_init()
 add_executable(MonoDeck_v2 
     MonoDeck_v2.c 
     platform/platform_init.c
+    platform/platform_time.c
+    core/app_state.c
+    core/engine.c
+    core/input.c
+    core/boot.c
+    drivers/buttons/buttons.c
     drivers/sh110x/sh110x.c
+    menu/menu.c
+    games/snake/snake.c
+    games/breakout/breakout.c
+    games/pong/pong.c
+    games/tetricore/tetricore.c
 )
 
 pico_set_program_name(MonoDeck_v2 "MonoDeck_v2")
@@ -54,18 +65,27 @@ target_link_libraries(MonoDeck_v2
 
 # Add the standard include files to the build
 target_include_directories(MonoDeck_v2 PRIVATE
+        ${CMAKE_CURRENT_LIST_DIR}
         ${CMAKE_CURRENT_LIST_DIR}/platform
+        ${CMAKE_CURRENT_LIST_DIR}/core
         ${CMAKE_CURRENT_LIST_DIR}/drivers
         ${CMAKE_CURRENT_LIST_DIR}/drivers/sh110x
+        ${CMAKE_CURRENT_LIST_DIR}/drivers/buttons
+        ${CMAKE_CURRENT_LIST_DIR}/games
+        ${CMAKE_CURRENT_LIST_DIR}/games/snake
+        ${CMAKE_CURRENT_LIST_DIR}/games/breakout
+        ${CMAKE_CURRENT_LIST_DIR}/games/pong
+        ${CMAKE_CURRENT_LIST_DIR}/games/tetricore
+        ${CMAKE_CURRENT_LIST_DIR}/menu
 )
 
 # Add any user requested libraries
 target_link_libraries(MonoDeck_v2 
-        hardware_spi
+        # hardware_spi
         hardware_i2c
         hardware_timer
-        hardware_watchdog
-        hardware_clocks
+        # hardware_watchdog
+        # hardware_clocks
         
         )
 
