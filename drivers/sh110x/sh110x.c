@@ -290,15 +290,15 @@ void swap(int *a, int *b) {
 }
 
 void sh110x_draw_bitmap(int x, int y, const uint8_t *bitmap, int w, int h) {
+    int byteWidth = (w + 7) / 8;
+
     for (int j = 0; j < h; j++) {
 
         for (int i = 0; i < w; i++) {
 
-            int byteIndex = i + (j / 8) * w;
-            uint8_t bitMask = 1 << (j % 8);
+            uint8_t b = bitmap[j * byteWidth + i / 8];
 
-            if (bitmap[byteIndex] & bitMask) {
-
+            if (b & (0x80 >> (i & 7))) {
                 int px = x + i;
                 int py = y + j;
 
@@ -306,11 +306,13 @@ void sh110x_draw_bitmap(int x, int y, const uint8_t *bitmap, int w, int h) {
                     py < 0 || py >= SH110X_HEIGHT)
                     continue;
 
-                framebuffer[px + (py / 8) * SH110X_WIDTH] |= (1 << (py % 8));
+                framebuffer[px + (py / 8) * SH110X_WIDTH]
+                    |= (1 << (py % 8));
             }
         }
     }
 }
+
 
 
 void sh110x_command(uint8_t cmd) {

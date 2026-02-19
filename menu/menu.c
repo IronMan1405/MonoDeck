@@ -4,37 +4,65 @@
 #include "core/engine.h"
 #include "drivers/sh110x/sh110x.h"
 #include "platform/platform_config.h"
+#include "assets/monodeck_logo_64x32.h"
+
+#define LINE_Y(i) ((i) * 10)
+
+#define VISIBLE_ITEMS 3
+#define ITEM_HEIGHT 8
+#define LIST_START_Y 36
 
 static int selected = 0;
 static const int totalGames = 4;
 
+int scrollOffset = 0;
+
+static bool canEnter = true;
+
 void initMenu(void) {
     selected = 0;
+    canEnter = false;
 }
 
 void updateMenu(void) {
-    if (isPressed(BTN_UP_PIN))
-    {
+    if (isPressed(BTN_UP)) {
         selected--;
-        if (selected < 0)
+        if (selected < 0) {
             selected = totalGames - 1;
+        }
+        if (selected < scrollOffset) {
+            scrollOffset = selected;
+        }
     }
 
-    if (isPressed(BTN_DOWN_PIN))
-    {
+    if (isPressed(BTN_DOWN)) {
         selected++;
-        if (selected >= totalGames)
+        if (selected >= totalGames) {
             selected = 0;
+
+        }
+        if (selected >= scrollOffset + VISIBLE_ITEMS) {
+            scrollOffset = selected - VISIBLE_ITEMS + 1;
+        }
     }
 
-    if (isPressed(BTN_A))
-    {
+    if (!isHeld(BTN_A)) {
+        canEnter = true;
+    }
+
+    if (isPressed(BTN_A) && canEnter) {
+        canEnter = false;
         launchGame(selected);
+        return;
     }
 }
 
 void drawMenu(void) {
     sh110x_clear();
+
+    sh110x_draw_bitmap(28, 0, monodeck_logo_64x32, MONODECK_LOGO_W2, MONODECK_LOGO_H2);
+
+    sh110x_draw_line(0, 25, 127, 25);
 
     const char* games[] = {
         "Snake",
@@ -43,14 +71,15 @@ void drawMenu(void) {
         "Tetricore"
     };
 
-    for (int i = 0; i < totalGames; i++)
-    {
-        int y = 10 + (i * 12);
+    for (int i = 0; i < totalGames; i++) {
+        int itemIndex = scrollOffset + i;
 
-        if (i == selected)
-            sh110x_draw_text(0, y, ">", 1);
+        if (itemIndex >= totalGames) break;
 
-        sh110x_draw_text(12, y, games[i], 1);
+        if (itemIndex == selected) {
+            sh110x_draw_text(0, 32 + LINE_Y(i), "> ", 1);
+        }
+        sh110x_draw_text(12, 32 + LINE_Y(i), games[itemIndex], 1);
     }
 
     sh110x_update();

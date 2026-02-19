@@ -14,5 +14,5 @@ void buttons_init(void) {
 }
 
 bool buttons_read(int button_id) {
-    return !gpio_get(button_id); //invert because pull up
+    return !gpio_get(pins[button_id]); //invert because pull up
 }

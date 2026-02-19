@@ -50,6 +50,7 @@ add_executable(MonoDeck_v2
     games/breakout/breakout.c
     games/pong/pong.c
     games/tetricore/tetricore.c
+    assets/monodeck_logo.c
 )
 
 pico_set_program_name(MonoDeck_v2 "MonoDeck_v2")
@@ -77,6 +78,7 @@ target_include_directories(MonoDeck_v2 PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/games/pong
         ${CMAKE_CURRENT_LIST_DIR}/games/tetricore
         ${CMAKE_CURRENT_LIST_DIR}/menu
+        ${CMAKE_CURRENT_LIST_DIR}/assets
 )
 
 # Add any user requested libraries

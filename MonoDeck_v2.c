@@ -43,7 +43,7 @@ int main() {
     sh110x_update();
 
     initInput();
-    // initBoot();
+    initBoot();
     
     while (1) {
         if (!platform_frame_ready()) continue;
