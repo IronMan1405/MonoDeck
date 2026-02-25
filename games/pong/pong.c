@@ -32,7 +32,7 @@ static int highScore = 0;
 static int score = 0;
 
 static unsigned long lastBallUpdate = 0;
-const unsigned long ballInterval = 30;
+static const unsigned long ballInterval = 30;
 
 
 static void handlePongInput();
