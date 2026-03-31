@@ -77,7 +77,7 @@ void sh110x_update(void) {
 }
 
 void sh110x_draw_pixel(int x, int y, bool on) {
-    if (x >= SH110X_WIDTH || y >= SH110X_HEIGHT) return;
+    if (x < 0 || y < 0 || x >= SH110X_WIDTH || y >= SH110X_HEIGHT) return;
     
     uint16_t index = x + (y / 8) * SH110X_WIDTH;
     uint8_t bit = 1 << (y % 8);
@@ -116,7 +116,7 @@ void sh110x_draw_line(int x0, int y0, int x1, int y1) {
 }
 
 void sh110x_draw_fast_hline(int x1, int y, int x2) {
-    for (int i = 0; i < (x2-x1); i++) {
+    for (int i = 0; i <= (x2-x1); i++) {
         sh110x_draw_pixel(x1 + i, y, true);
     }
 }
@@ -135,7 +135,7 @@ void sh110x_draw_char(int x, int y, char c, uint8_t scale) {
             if (bits & ( 1<< row)){
                 for (int dx = 0; dx < scale; dx++) {
                     for (int dy = 0; dy < scale; dy++) {
-                        sh110x_draw_pixel(x + col, y + row, true);
+                        sh110x_draw_pixel(x + col * scale, y + row * scale, true);
                     }
                 }
             }

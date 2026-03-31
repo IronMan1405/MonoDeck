@@ -4,12 +4,10 @@
 #include <string.h>
 
 bool gameWantsExit = false;
-
 static const Game* currentGame = NULL;
 
 void launchGame(const char* name) {
     currentGame = registry_find(name);
-
     if (currentGame) {
         currentGame->init();
         currentState = IN_GAME;
@@ -17,9 +15,10 @@ void launchGame(const char* name) {
 }
 
 void tickGame(void) {
-    if (currentGame) {
-        currentGame->update();
-        currentGame->draw();
+    const Game* game = currentGame;
+    if (game) {
+        game->update();
+        game->draw();
     }
 }
 
