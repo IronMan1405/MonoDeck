@@ -7,6 +7,7 @@
 #include "core/engine.h"
 #include "core/input.h"
 #include "platform/platform_time.h"
+#include "platform/platform_storage.h"
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
@@ -35,7 +36,6 @@ const int BRICK_W = 14;
 const int BRICK_PADDING = 2;
 const int BRICK_OFFSET_Y = 5;
 
-const int BREAKOUT_HIGHSCORE_ADDR = 8;
 static int highScore = 0;
 static int score;
 
@@ -66,6 +66,9 @@ void initBreakout(void) {
 
     breakoutState = BREAKOUT_TITLE;
     score = 0;
+
+    loadStorage();
+    highScore = gStorage.breakout_hs;
 
     for (int i = 0; i < BRICK_ROWS; i++) {
         for (int j = 0; j < BRICK_COLS; j++) {
@@ -203,6 +206,8 @@ void updateBreakoutBall() {
         breakoutState = BREAKOUT_OVER;
         if (score > highScore) {
             highScore = score;
+            gStorage.breakout_hs = (uint16_t)highScore;
+            updateStorage();
         }
     }
     if (ball.y + ballSize >= paddle.y && ball.x >= paddle.x && ball.x <= paddle.x + paddleWidth) {

@@ -39,6 +39,7 @@ add_executable(MonoDeck_v2
     MonoDeck_v2.c 
     platform/platform_init.c
     platform/platform_time.c
+    platform/platform_storage.c
     core/app_state.c
     core/engine.c
     core/input.c

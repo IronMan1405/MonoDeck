@@ -8,6 +8,7 @@
 #include "core/engine.h"
 #include "core/input.h"
 #include "platform/platform_time.h"
+#include "platform/platform_storage.h"
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
@@ -133,6 +134,9 @@ void initTetricore(void) {
 
     tetricoreState = TETRICORE_TITLE;
     score = 0;
+
+    loadStorage();
+    highScore = gStorage.tetricore_hs;
 
     for (int y = 0; y < GRID_H; y++) {
         for (int x = 0; x < GRID_W; x++) {
@@ -378,6 +382,8 @@ void spawnPiece() {
         tetricoreState = TETRICORE_OVER;
         if (score > highScore) {
             highScore = score;
+            gStorage.tetricore_hs = (uint16_t)highScore;
+            updateStorage();
         }
     }
 }

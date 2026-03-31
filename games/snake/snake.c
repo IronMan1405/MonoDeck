@@ -7,6 +7,7 @@
 #include "core/engine.h"
 #include "core/input.h"
 #include "platform/platform_time.h"
+#include "platform/platform_storage.h"
 
 static bool canExit = true;
 
@@ -25,7 +26,6 @@ static Direction currentDirection = RIGHT;
 static unsigned long lastStepTime;
 static unsigned long stepInterval = 250;
 
-const int EEPROM_ADDR_HIGHSCORE = 0;
 static int highScore = 0;
 static int score;
 
@@ -52,6 +52,9 @@ void initSnake(void) {
     nextDirection = RIGHT;
     
     score = 0;
+
+    loadStorage();
+    highScore = gStorage.snake_hs;
 
     snakeLength = 3;
     snake[0] = (Point){GRID_W / 2, GRID_H / 2};
@@ -175,6 +178,8 @@ void stepSnake() {
     if (newHead.x < 0 || newHead.x >= GRID_W || newHead.y < 0 || newHead.y >= GRID_H) {
         if (score > highScore) {
             highScore = score;
+            gStorage.snake_hs = (uint16_t)highScore;
+            updateStorage();
         }
         snakeState = SNAKE_OVER;
         return;
@@ -184,6 +189,8 @@ void stepSnake() {
         if (newHead.x == snake[i].x && newHead.y == snake[i].y) {
             if (score > highScore) {
                 highScore = score;
+                gStorage.snake_hs = (uint16_t)highScore;
+                updateStorage();
             }
             snakeState = SNAKE_OVER;
             return;

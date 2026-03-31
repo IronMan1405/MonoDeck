@@ -7,6 +7,7 @@
 #include "core/engine.h"
 #include "core/input.h"
 #include "platform/platform_time.h"
+#include "platform/platform_storage.h"
 
 #define MIN(a,b) ((a) < (b) ? (a) : (b))
 #define MAX(a,b) ((a) > (b) ? (a) : (b))
@@ -27,7 +28,6 @@ const static int ballSize = 3;
 static Coords ballSpeed;
 static Coords ball;
 
-const int PONG_HIGHSCORE_ADDR = 4;
 static int highScore = 0;
 static int score = 0;
 
@@ -52,6 +52,9 @@ void initPong(void) {
     canExit = false;
 
     score = 0;
+
+    loadStorage();
+    highScore = gStorage.pong_hs;
 
     paddle.x = (SCREEN_WIDTH - paddleWidth) / 2;
     paddle.y = SCREEN_HEIGHT - 10;
@@ -170,6 +173,8 @@ static void updatePongBall() {
         pongState = PONG_OVER;
         if (score > highScore) {
             highScore = score;
+            gStorage.pong_hs = (uint16_t)highScore;
+            updateStorage();
         }
     }
     if (ball.y + ballSize >= paddle.y && ball.x + ballSize >= paddle.x && ball.x <= paddle.x + paddleWidth) {
