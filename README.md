@@ -9,7 +9,7 @@ A compact, handheld game console built around the Raspberry Pi Pico 2 W, featuri
 | Game | Description |
 |------|-------------|
 | Snake | Classic snake with high score tracking |
-| Pong | Two-paddle pong |
+| Pong | One-paddle pong |
 | Breakout | Block-breaking arcade game |
 | Tetricore | Tetris-style falling block game |
 
