@@ -25,4 +25,5 @@ void tickGame(void) {
 
 void requestExitToMenu() {
     gameWantsExit = true;
+    currentGame = NULL;
 }

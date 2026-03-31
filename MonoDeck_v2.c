@@ -60,6 +60,7 @@ int main() {
 
         if (gameWantsExit) {
             gameWantsExit = false;
+            requestExitToMenu();
             initMenu();
             currentState = MENU;
         }
