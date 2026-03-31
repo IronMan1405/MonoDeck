@@ -5,7 +5,8 @@
 
 extern bool gameWantsExit;
 
-void launchGame(int index);
+void launchGame(const char* name);
+void tickGame(void);
 void requestExitToMenu(void);
 
 #endif

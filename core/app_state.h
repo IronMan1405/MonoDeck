@@ -4,10 +4,7 @@
 typedef enum {
     BOOT,
     MENU,
-    SNAKE,
-    PONG,
-    BREAKOUT,
-    TETRICORE
+    IN_GAME
 } AppState;
 
 extern AppState currentState;

@@ -1,6 +1,7 @@
 #include "menu.h"
 #include "core/input.h"
 #include "core/app_state.h"
+#include "app_registry/app_registry.h"
 #include "core/engine.h"
 #include "drivers/sh110x/sh110x.h"
 #include "platform/platform_config.h"
@@ -13,10 +14,7 @@
 #define LIST_START_Y 36
 
 static int selected = 0;
-static const int totalGames = 4;
-
 int scrollOffset = 0;
-
 static bool canEnter = true;
 
 void initMenu(void) {
@@ -28,7 +26,7 @@ void updateMenu(void) {
     if (isPressed(BTN_UP)) {
         selected--;
         if (selected < 0) {
-            selected = totalGames - 1;
+            selected = gameCount - 1;
         }
         if (selected < scrollOffset) {
             scrollOffset = selected;
@@ -37,9 +35,8 @@ void updateMenu(void) {
 
     if (isPressed(BTN_DOWN)) {
         selected++;
-        if (selected >= totalGames) {
+        if (selected >= gameCount) {
             selected = 0;
-
         }
         if (selected >= scrollOffset + VISIBLE_ITEMS) {
             scrollOffset = selected - VISIBLE_ITEMS + 1;
@@ -52,7 +49,7 @@ void updateMenu(void) {
 
     if (isPressed(BTN_A) && canEnter) {
         canEnter = false;
-        launchGame(selected);
+        launchGame(games[selected].name);
         return;
     }
 }
@@ -61,25 +58,16 @@ void drawMenu(void) {
     sh110x_clear();
 
     sh110x_draw_bitmap(28, 0, monodeck_logo_64x32, MONODECK_LOGO_W2, MONODECK_LOGO_H2);
-
     sh110x_draw_line(0, 25, 127, 25);
 
-    const char* games[] = {
-        "Snake",
-        "Breakout",
-        "Pong",
-        "Tetricore"
-    };
-
-    for (int i = 0; i < totalGames; i++) {
+    for (int i = 0; i < gameCount; i++) {
         int itemIndex = scrollOffset + i;
 
-        if (itemIndex >= totalGames) break;
-
+        if (itemIndex >= gameCount) break;
         if (itemIndex == selected) {
             sh110x_draw_text(0, 32 + LINE_Y(i), "> ", 1);
         }
-        sh110x_draw_text(12, 32 + LINE_Y(i), games[itemIndex], 1);
+        sh110x_draw_text(12, 32 + LINE_Y(i), games[itemIndex].name, 1);
     }
 
     sh110x_update();

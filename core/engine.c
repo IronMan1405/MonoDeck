@@ -1,35 +1,26 @@
 #include "engine.h"
 #include "core/app_state.h"
-
-#include "games/snake/snake.h"
-#include "games/breakout/breakout.h"
-#include "games/pong/pong.h"
-#include "games/tetricore/tetricore.h"
+#include "app_registry/app_registry.h"
+#include <string.h>
 
 bool gameWantsExit = false;
 
-void launchGame(int index) {
-    // currentGame = index;
+static const Game* currentGame = NULL;
 
-    switch (index) {
-        case 0:
-            currentState = SNAKE;
-            initSnake();
-            break;
-        case 1:
-            currentState = BREAKOUT;
-            initBreakout();
-            break;
-        case 2:
-            currentState = PONG;
-            initPong();
-            break;
-        case 3:
-            currentState = TETRICORE;
-            initTetricore();
-            break;
+void launchGame(const char* name) {
+    currentGame = registry_find(name);
+
+    if (currentGame) {
+        currentGame->init();
+        currentState = IN_GAME;
     }
+}
 
+void tickGame(void) {
+    if (currentGame) {
+        currentGame->update();
+        currentGame->draw();
+    }
 }
 
 void requestExitToMenu() {
