@@ -173,6 +173,8 @@ That's it. The menu, main loop, and state machine require no changes.
 - [ ] Refine Scoring methods
 - [ ] Add levels & game modes
 - [ ] Add PCB files and enclosure CAD files 
+- [ ] Add Select & Start buttons interface
+- [ ] Add persistent high score storing
 
 ---
 
