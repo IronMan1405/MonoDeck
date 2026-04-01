@@ -177,7 +177,7 @@ That's it. The menu, main loop, and state machine require no changes.
 - [ ] Add PCB files and enclosure CAD files 
 - [ ] Implement Bi-directional rotation & wall kicks in Tetricore
 - [ ] UI enhancements
-- [ ] Fix reverse scroll
+- [x] Fix reverse scroll
 
 ---
 

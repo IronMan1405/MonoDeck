@@ -27,6 +27,7 @@ void updateMenu(void) {
         selected--;
         if (selected < 0) {
             selected = gameCount - 1;
+            scrollOffset = gameCount - VISIBLE_ITEMS;
         }
         if (selected < scrollOffset) {
             scrollOffset = selected;
@@ -37,6 +38,7 @@ void updateMenu(void) {
         selected++;
         if (selected >= gameCount) {
             selected = 0;
+            scrollOffset = 0;
         }
         if (selected >= scrollOffset + VISIBLE_ITEMS) {
             scrollOffset = selected - VISIBLE_ITEMS + 1;
@@ -65,9 +67,9 @@ void drawMenu(void) {
 
         if (itemIndex >= gameCount) break;
         if (itemIndex == selected) {
-            sh110x_draw_text(0, 32 + LINE_Y(i), "> ", 1);
+            sh110x_draw_text(0, 28 + LINE_Y(i), "> ", 1);
         }
-        sh110x_draw_text(12, 32 + LINE_Y(i), games[itemIndex].name, 1);
+        sh110x_draw_text(12, 28 + LINE_Y(i), games[itemIndex].name, 1);
     }
 
     sh110x_update();

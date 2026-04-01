@@ -313,6 +313,28 @@ void sh110x_draw_bitmap(int x, int y, const uint8_t *bitmap, int w, int h) {
     }
 }
 
+void sh110x_dither_fade(int y_start, int height) {
+    for (int y = y_start; y < y_start + height; y++) {
+        int row = y - y_start; // 0..height-1
+        for (int x = 0; x < SH110X_WIDTH; x++) {
+            bool kill = false;
+
+            if (row >= height * 3 / 4) {
+                kill = true;                          // bottom quarter: all off
+            } else if (row >= height / 2) {
+                kill = ((x + y) % 2 == 0)            // middle quarter: 75% off
+                    || (x % 2 == 0 && y % 2 == 0);
+            } else if (row >= height / 4) {
+                kill = ((x + y) % 2 == 0);           // upper-mid quarter: 50% off
+            }
+            // top quarter: untouched
+
+            if (kill) sh110x_draw_pixel(x, y, false);
+        }
+    }
+}
+
+
 
 
 void sh110x_command(uint8_t cmd) {

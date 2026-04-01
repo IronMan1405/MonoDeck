@@ -20,4 +20,5 @@ void sh110x_fill_triangle(int x1, int y1, int x2, int y2, int x3, int y3);
 
 void sh110x_draw_bitmap(int x, int y, const uint8_t *bitmap, int w, int h);
 void sh110x_command(uint8_t cmd);
+void sh110x_dither_fade(int y_start, int height);
 
