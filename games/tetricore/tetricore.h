@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-typedef enum {TETRICORE_TITLE, TETRICORE_PLAYING, TETRICORE_PAUSE, TETRICORE_OVER} TetricoreStates;
+typedef enum {TETRICORE_TITLE, TETRICORE_PLAYING, TETRICORE_PAUSE, TETRICORE_OVER, TETRICORE_WARN_EXIT} TetricoreStates;
 
 typedef enum {I, O, T, S, Z, J, L} Shapes;
 

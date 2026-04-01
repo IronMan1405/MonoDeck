@@ -107,6 +107,7 @@ static void drawTetricoreGame();
 static void drawTetricoreTitle();
 static void drawTetricoreGameOver();
 static void drawTetricorePause();
+static void drawTetricoreExitWarning();
 
 static void spawnPiece();
 static void tryMoveDown();
@@ -152,7 +153,7 @@ void initTetricore(void) {
 void updateTetricore(void) {
     switch (tetricoreState) {
         case TETRICORE_TITLE: {
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 tetricoreState = TETRICORE_PLAYING;
                 spawnPiece();
                 lastFall = platform_millis();
@@ -179,18 +180,32 @@ void updateTetricore(void) {
                     score += 1;
                 }
             }
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 tetricoreState = TETRICORE_PAUSE;
             }
             break;
         }
-        case TETRICORE_PAUSE: {
-            if (isPressed(BTN_A)) {
+        case TETRICORE_PAUSE:
+            if (isPressed(BTN_START)) {
                 lastFall = platform_millis();
                 tetricoreState = TETRICORE_PLAYING;
             }
+            if (canExit && isPressed(BTN_B)) {
+                tetricoreState = TETRICORE_WARN_EXIT;
+            }
             break;
-        }
+        case TETRICORE_WARN_EXIT:
+            if (!isHeld(BTN_A)) {
+                canExit = true;
+            }
+            if (canExit && isPressed(BTN_A)) {
+                canExit = false;
+                requestExitToMenu();
+            }
+            if (isPressed(BTN_B)) {
+                tetricoreState = TETRICORE_PAUSE;
+            }
+            break;
         case TETRICORE_OVER: {
             if (!isHeld(BTN_B)) {
                 canExit = true;
@@ -244,6 +259,9 @@ void drawTetricore(void) {
             break;
         case TETRICORE_PAUSE:
             drawTetricorePause();
+            break;
+        case TETRICORE_WARN_EXIT:
+            drawTetricoreExitWarning();
             break;
         case TETRICORE_OVER:
             drawTetricoreGameOver();
@@ -504,7 +522,7 @@ void drawTetricoreTitle() {
     snprintf(highbuf, sizeof(highbuf), "High %d", highScore);
     sh110x_draw_text(20, 40, highbuf, 1);
 
-    sh110x_draw_text(20, 50, "Press A to start", 1);
+    sh110x_draw_text(20, 50, "Press START", 1);
 }
 
 void drawTetricoreGameOver() {
@@ -521,6 +539,15 @@ void drawTetricoreGameOver() {
     sh110x_draw_text(5, 56, "A:Title      B:Exit", 1);
 }
 
+
 void drawTetricorePause() {
-    sh110x_draw_text(32, 32, "PAUSED", 1);
+    sh110x_draw_text(32, 12, "PAUSED", 2);
+    sh110x_draw_text(2, 46, "START: Return to game", 1);
+    sh110x_draw_text(2, 56, "B: Exit", 1);
+}
+
+void drawTetricoreExitWarning() {
+    sh110x_draw_text(5, 5, "Current Progress",1);
+    sh110x_draw_text(5, 15, "will be lost!", 1);
+    sh110x_draw_text(2, 56, "A: Proceed  B:Cancel", 1);
 }

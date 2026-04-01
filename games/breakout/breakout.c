@@ -50,7 +50,7 @@ static void drawBreakoutGame();
 static void drawBreakoutTitle();
 static void drawBreakoutGameOver();
 static void drawBreakoutPause();
-
+static void drawBreakoutExitWarning();
 
 
 
@@ -93,7 +93,7 @@ void initBreakout(void) {
 void updateBreakout(void) {
     switch (breakoutState) {
         case BREAKOUT_TITLE:
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 breakoutState = BREAKOUT_PLAYING;
             }
             if (!isHeld(BTN_B)) {
@@ -112,7 +112,7 @@ void updateBreakout(void) {
                 updateBreakoutBall();
             }
 
-            if (ballLaunched && isPressed(BTN_A)) {
+            if (ballLaunched && isPressed(BTN_START)) {
                 breakoutState = BREAKOUT_PAUSE;
             }
             if (!ballLaunched && isPressed(BTN_A)) {
@@ -125,9 +125,24 @@ void updateBreakout(void) {
             }
             break;
         case BREAKOUT_PAUSE:
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 lastBallUpdate = platform_millis();
                 breakoutState = BREAKOUT_PLAYING;
+            }
+            if (canExit && isPressed(BTN_B)) {
+                breakoutState = BREAKOUT_EXIT_WARN;
+            }
+            break;
+        case BREAKOUT_EXIT_WARN:
+            if (!isHeld(BTN_A)) {
+                canExit = true;
+            }
+            if (canExit && isPressed(BTN_A)) {
+                canExit = false;
+                requestExitToMenu();
+            }
+            if (isPressed(BTN_B)) {
+                breakoutState = BREAKOUT_PAUSE;
             }
             break;
         case BREAKOUT_OVER:
@@ -166,6 +181,9 @@ void drawBreakout(void) {
             break;
         case BREAKOUT_PAUSE:
             drawBreakoutPause();
+            break;
+        case BREAKOUT_EXIT_WARN:
+            drawBreakoutExitWarning();
             break;
         case BREAKOUT_OVER:
             drawBreakoutGameOver();
@@ -269,7 +287,7 @@ void drawBreakoutTitle() {
     snprintf(highbuf, sizeof(highbuf), "High %d", highScore);
     sh110x_draw_text(20, 40, highbuf, 1);
 
-    sh110x_draw_text(20, 50, "Press A to start", 1);
+    sh110x_draw_text(20, 50, "Press START", 1);
 }
 
 void drawBreakoutGameOver() {
@@ -287,5 +305,13 @@ void drawBreakoutGameOver() {
 }
 
 void drawBreakoutPause() {
-    sh110x_draw_text(32, 32, "PAUSED", 1);
+    sh110x_draw_text(32, 12, "PAUSED", 2);
+    sh110x_draw_text(2, 46, "START: Return to game", 1);
+    sh110x_draw_text(2, 56, "B: Exit", 1);
+}
+
+void drawBreakoutExitWarning() {
+    sh110x_draw_text(5, 5, "Current Progress",1);
+    sh110x_draw_text(5, 15, "will be lost!", 1);
+    sh110x_draw_text(2, 56, "A: Proceed  B:Cancel", 1);
 }

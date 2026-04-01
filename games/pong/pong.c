@@ -41,6 +41,7 @@ static void drawPongGame();
 static void drawPongTitle();
 static void drawPongGameOver();
 static void drawPongPause();
+static void drawPongExitWarning();
 
 
 void initPong(void) {
@@ -74,7 +75,7 @@ void updatePong(void) {
 
     switch (pongState) {
         case PONG_TITLE:
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 pongState = PONG_PLAYING;
             }
             if (!isHeld(BTN_B)) {
@@ -93,14 +94,29 @@ void updatePong(void) {
                 updatePongBall();
             }
 
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 pongState = PONG_PAUSE;
             }
             break;
         case PONG_PAUSE:
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 lastBallUpdate = platform_millis();
                 pongState = PONG_PLAYING;
+            }
+            if (canExit && isPressed(BTN_B)) {
+                pongState = PONG_EXIT_WARN;
+            }
+            break;
+        case PONG_EXIT_WARN:
+            if (!isHeld(BTN_A)) {
+                canExit = true;
+            }
+            if (canExit && isPressed(BTN_A)) {
+                canExit = false;
+                requestExitToMenu();
+            }
+            if (isPressed(BTN_B)) {
+                pongState = PONG_PAUSE;
             }
             break;
         case PONG_OVER:
@@ -138,6 +154,9 @@ void drawPong(void) {
             break;
         case PONG_PAUSE:
             drawPongPause();
+            break;
+        case PONG_EXIT_WARN:
+            drawPongExitWarning();
             break;
         case PONG_OVER:
             drawPongGameOver();
@@ -216,7 +235,7 @@ void drawPongTitle() {
     snprintf(highbuf, sizeof(highbuf), "High %d", highScore);
     sh110x_draw_text(20, 40, highbuf, 1);
 
-    sh110x_draw_text(20, 50, "Press A to start", 1);
+    sh110x_draw_text(20, 50, "Press START", 1);
 }
 
 void drawPongGame() {
@@ -229,7 +248,15 @@ void drawPongGame() {
 }
 
 void drawPongPause() {
-    sh110x_draw_text(32, 32, "PAUSED", 1);
+    sh110x_draw_text(32, 12, "PAUSED", 2);
+    sh110x_draw_text(2, 46, "START: Return to game", 1);
+    sh110x_draw_text(2, 56, "B: Exit", 1);
+}
+
+void drawPongExitWarning() {
+    sh110x_draw_text(5, 5, "Current Progress",1);
+    sh110x_draw_text(5, 15, "will be lost!", 1);
+    sh110x_draw_text(2, 56, "A: Proceed  B:Cancel", 1);
 }
 
 void drawPongGameOver() {

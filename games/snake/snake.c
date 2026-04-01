@@ -268,7 +268,7 @@ void drawSnakeTitle() {
     snprintf(highbuf, sizeof(highbuf), "High %d", highScore);
     sh110x_draw_text(20, 40, highbuf, 1);
 
-    sh110x_draw_text(20, 50, "Press START to start", 1);
+    sh110x_draw_text(20, 50, "Press START", 1);
 }
 
 void drawSnakePause() {

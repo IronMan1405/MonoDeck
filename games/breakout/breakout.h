@@ -1,7 +1,7 @@
 #ifndef BREAKOUT_H
 #define BREAKOUT_H
 
-typedef enum {BREAKOUT_TITLE, BREAKOUT_PLAYING, BREAKOUT_PAUSE, BREAKOUT_OVER} BreakoutStates;
+typedef enum {BREAKOUT_TITLE, BREAKOUT_PLAYING, BREAKOUT_PAUSE, BREAKOUT_OVER, BREAKOUT_EXIT_WARN} BreakoutStates;
 
 typedef struct {
     int x;

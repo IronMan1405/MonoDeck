@@ -2,7 +2,7 @@
 #define PONG_H
 
 typedef enum {
-    PONG_TITLE, PONG_PLAYING, PONG_PAUSE, PONG_OVER
+    PONG_TITLE, PONG_PLAYING, PONG_PAUSE, PONG_OVER, PONG_EXIT_WARN
 } PongStates;
 
 typedef struct {
