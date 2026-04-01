@@ -37,6 +37,7 @@ static void drawSnakeGame();
 static void drawSnakeTitle();
 static void drawSnakeGameOver();
 static void drawSnakePause();
+static void drawSnakeExitWarning();
 
 void initSnake(void) {
     srand(platform_millis());
@@ -73,7 +74,7 @@ void updateSnake(void) {
 
     switch (snakeState) {
         case SNAKE_TITLE:
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 snakeState = SNAKE_PLAYING;
                 lastStepTime = platform_millis();
             }
@@ -92,13 +93,28 @@ void updateSnake(void) {
                 lastStepTime = platform_millis();
                 stepSnake();
             }
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 snakeState = SNAKE_PAUSE;
             }
             break;
         case SNAKE_PAUSE:
-            if (isPressed(BTN_A)) {
+            if (isPressed(BTN_START)) {
                 snakeState = SNAKE_PLAYING;
+            }
+            if (canExit && isPressed(BTN_B)) {
+                snakeState = SNAKE_EXIT_WARN;
+            }
+            break;
+        case SNAKE_EXIT_WARN:
+            if (!isHeld(BTN_A)) {
+                canExit = true;
+            }
+            if (canExit && isPressed(BTN_A)) {
+                canExit = false;
+                requestExitToMenu();
+            }
+            if (isPressed(BTN_B)) {
+                snakeState = SNAKE_PAUSE;
             }
             break;
         case SNAKE_OVER:
@@ -137,6 +153,9 @@ void drawSnake(void) {
         case SNAKE_PAUSE:
             drawSnakePause();
             // sh110x_update();
+            break;
+        case SNAKE_EXIT_WARN:
+            drawSnakeExitWarning();
             break;
         case SNAKE_OVER:
             drawSnakeGameOver();
@@ -249,9 +268,17 @@ void drawSnakeTitle() {
     snprintf(highbuf, sizeof(highbuf), "High %d", highScore);
     sh110x_draw_text(20, 40, highbuf, 1);
 
-    sh110x_draw_text(20, 50, "Press A to start", 1);
+    sh110x_draw_text(20, 50, "Press START to start", 1);
 }
 
 void drawSnakePause() {
-    sh110x_draw_text(32, 32, "PAUSED", 1);
+    sh110x_draw_text(32, 12, "PAUSED", 2);
+    sh110x_draw_text(2, 46, "START: Return to game", 1);
+    sh110x_draw_text(2, 56, "B: Exit", 1);
+}
+
+void drawSnakeExitWarning() {
+    sh110x_draw_text(5, 5, "Current Progress",1);
+    sh110x_draw_text(5, 15, "will be lost!", 1);
+    sh110x_draw_text(2, 56, "A: Proceed  B:Cancel", 1);
 }

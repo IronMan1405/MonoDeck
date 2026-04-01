@@ -21,7 +21,9 @@ void platform_init(void) {
         BTN_LEFT_PIN,
         BTN_RIGHT_PIN,
         BTN_A_PIN,
-        BTN_B_PIN
+        BTN_B_PIN,
+        BTN_SEL_PIN,
+        BTN_START_PIN
     };
 
     const size_t button_count = sizeof(buttons) / sizeof(buttons[0]);

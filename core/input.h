@@ -10,6 +10,8 @@ typedef enum {
     BTN_RIGHT,
     BTN_B,
     BTN_A,
+    BTN_SEL,
+    BTN_START,
     BTN_COUNT
 } Button;
 

@@ -3,7 +3,7 @@
 #include "buttons.h"
 #include "platform/platform_config.h"
 
-static const int pins[] = {BTN_UP_PIN, BTN_DOWN_PIN, BTN_LEFT_PIN, BTN_RIGHT_PIN, BTN_A_PIN, BTN_B_PIN};
+static const int pins[] = {BTN_UP_PIN, BTN_DOWN_PIN, BTN_LEFT_PIN, BTN_RIGHT_PIN, BTN_A_PIN, BTN_B_PIN, BTN_SEL_PIN, BTN_START_PIN};
 
 void buttons_init(void) {
     for (int i = 0; i < 6; i++) {

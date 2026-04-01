@@ -12,3 +12,5 @@
 #define BTN_RIGHT_PIN 13
 #define BTN_A_PIN 14
 #define BTN_B_PIN 15
+#define BTN_SEL_PIN 20
+#define BTN_START_PIN 21
