@@ -84,7 +84,7 @@ const uint8_t tetrominoes[7][SHAPE_SIZE][SHAPE_SIZE] = {
 };
 
 unsigned long lastFall = 0;
-const unsigned long FALL_INTERVAL = 300;
+const unsigned long FALL_INTERVAL = 350;
 const unsigned long SOFT_DROP_INTERVAL = 50;
 
 static bool softDrop = false;
@@ -311,9 +311,21 @@ void drawTetricore(void) {
 
 
 void handleTetricoreInput() {
+    
+    // softDrop = isHeld(BTN_DOWN);
+    
+    if (platform_millis() - lastRotate >= ROTATE_DELAY) {
+        if (isPressed(BTN_B)) {
+            tryRotate(false);
+            lastRotate = platform_millis();
+        }
+        if (isPressed(BTN_A)) {
+            tryRotate(true);
+            lastRotate = platform_millis();
+        }
+    }
+    
     if (platform_millis() - lastInput < INPUT_DELAY) return;
-
-    softDrop = isHeld(BTN_DOWN);
 
     if (isHeld(BTN_LEFT)) {
         moveLeft();
@@ -322,13 +334,6 @@ void handleTetricoreInput() {
     if(isHeld(BTN_RIGHT)) {
         moveRight();
         lastInput = platform_millis();
-    }
-
-    if (isPressed(BTN_B)) {
-        tryRotate(false);
-    }
-    if (isPressed(BTN_A)) {
-        tryRotate(true);
     }
 }
 
