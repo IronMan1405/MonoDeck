@@ -57,6 +57,8 @@ void initPong(void) {
     loadStorage();
     highScore = gStorage.pong_hs;
 
+    if (highScore < 0 || highScore > 999) highScore = 0;
+
     paddle.x = (SCREEN_WIDTH - paddleWidth) / 2;
     paddle.y = SCREEN_HEIGHT - 10;
     

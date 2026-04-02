@@ -137,15 +137,16 @@ void initTetricore(void) {
     sh110x_clear();
     sh110x_update();
 
-    if (highScore < 0 || highScore > 99999) highScore = 0;
-
+    
     canExit = false;
-
+    
     tetricoreState = TETRICORE_TITLE;
     score = 0;
-
+    
     loadStorage();
     highScore = gStorage.tetricore_hs;
+    
+    if (highScore < 0 || highScore > 99999) highScore = 0;
 
     for (int y = 0; y < GRID_H; y++) {
         for (int x = 0; x < GRID_W; x++) {

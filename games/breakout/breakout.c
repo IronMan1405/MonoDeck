@@ -12,6 +12,9 @@
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 
+#define MIN(a,b) ((a) < (b) ? (a) : (b))
+#define MAX(a,b) ((a) > (b) ? (a) : (b))
+
 static bool canExit = true;
 
 BreakoutStates breakoutState = BREAKOUT_TITLE;
@@ -23,21 +26,22 @@ static int paddleSpeed = 5;
 
 
 Ball ball;
-const int ballSize = 2;
+const int ballSize = 1;
 const float MAX_BALL_SPEED = 5.0;
 
 #define BRICK_ROWS 4
-#define BRICK_COLS 8
+#define BRICK_COLS 10
 
 static bool bricks[BRICK_ROWS][BRICK_COLS];
 
 const int BRICK_H = 5;
-const int BRICK_W = 14;
+const int BRICK_W = 11;
 const int BRICK_PADDING = 2;
 const int BRICK_OFFSET_Y = 5;
 
 static int highScore = 0;
 static int score;
+static int bricksRemaining;
 
 static unsigned long lastBallUpdate = 0;
 static const unsigned long ballInterval = 30;
@@ -49,6 +53,7 @@ static void updateBreakoutBall();
 static void drawBreakoutGame();
 static void drawBreakoutTitle();
 static void drawBreakoutGameOver();
+static void drawBreakoutWin();
 static void drawBreakoutPause();
 static void drawBreakoutExitWarning();
 
@@ -60,19 +65,22 @@ void initBreakout(void) {
     sh110x_clear();
     sh110x_update();
 
-    if (highScore < 0 || highScore > 999) highScore = 0;
-
     canExit = false;
-
+    
     breakoutState = BREAKOUT_TITLE;
     score = 0;
-
+    
     loadStorage();
     highScore = gStorage.breakout_hs;
 
+    if (highScore < 0 || highScore > 999) highScore = 0;
+
+    bricksRemaining = 0;
+    
     for (int i = 0; i < BRICK_ROWS; i++) {
         for (int j = 0; j < BRICK_COLS; j++) {
             bricks[i][j] = true;
+            bricksRemaining++;
         }
     }
 
@@ -146,6 +154,7 @@ void updateBreakout(void) {
             }
             break;
         case BREAKOUT_OVER:
+        case BREAKOUT_WIN:
             if (!isHeld(BTN_B)) {
                 canExit = true;
             }
@@ -188,6 +197,9 @@ void drawBreakout(void) {
         case BREAKOUT_OVER:
             drawBreakoutGameOver();
             break;
+        case BREAKOUT_WIN:
+            drawBreakoutWin();
+            break;
     }
 
     sh110x_update();
@@ -199,9 +211,11 @@ void handleBreakoutInput() {
     if (isHeld(BTN_LEFT) && paddle.x > 0) {
         paddle.x -= paddleSpeed;
     }
+    if (paddle.x < 0) paddle.x = 0;
     if (isHeld(BTN_RIGHT) && paddle.x < SCREEN_WIDTH - paddleWidth) {
         paddle.x += paddleSpeed;
     }
+    if (paddle.x > SCREEN_WIDTH - paddleWidth) paddle.x = SCREEN_WIDTH - paddleWidth;
 }
 
 void updateBreakoutBall() {
@@ -228,7 +242,7 @@ void updateBreakoutBall() {
             updateStorage();
         }
     }
-    if (ball.y + ballSize >= paddle.y && ball.x >= paddle.x && ball.x <= paddle.x + paddleWidth) {
+    if (ball.y + ballSize >= paddle.y && ball.x + ballSize >= paddle.x && ball.x <= paddle.x + paddleWidth) {
         ball.vy = -ball.vy;
         ball.y = paddle.y - ballSize;
 
@@ -241,21 +255,59 @@ void updateBreakoutBall() {
 
     for (int i = 0; i < BRICK_ROWS; i++) {
         for (int j = 0; j < BRICK_COLS; j++) {
-            if (bricks[i][j]) {
-                int brickX = j * (BRICK_W + BRICK_PADDING);
-                int brickY = i * (BRICK_H + BRICK_PADDING) + BRICK_OFFSET_Y;
-                if (ball.x >= brickX && ball.x <= brickX + BRICK_W && ball.y + ballSize >= brickY && ball.y - ballSize <= brickY + BRICK_H) {
-                    ball.vy = -ball.vy;
-                    bricks[i][j] = false;
-                    int pts = (i + 1) * 10;
-                    score += pts;
+            // if (bricks[i][j]) {
+            //     int brickX = j * (BRICK_W + BRICK_PADDING);
+            //     int brickY = i * (BRICK_H + BRICK_PADDING) + BRICK_OFFSET_Y;
+            //     if (ball.x >= brickX && ball.x <= brickX + BRICK_W && ball.y + ballSize >= brickY && ball.y - ballSize <= brickY + BRICK_H) {
+            //         ball.vy = -ball.vy;
+            //         bricks[i][j] = false;
+            //         int pts = (i + 1) * 10;
+            //         score += pts;
+            //     }
+            // }
+
+            if (!bricks[i][j]) continue;
+
+            int brickX = j * (BRICK_W + BRICK_PADDING);
+            int brickY = i * (BRICK_H + BRICK_PADDING) + BRICK_OFFSET_Y;
+
+            if (ball.x + ballSize < brickX || ball.x - ballSize > brickX + BRICK_W) continue;
+            if (ball.y + ballSize < brickY || ball.y - ballSize > brickY + BRICK_H) continue;
+
+            float overlapLeft = (ball.x + ballSize) - brickX;
+            float overlapRight = (brickX + BRICK_W) - (ball.x - ballSize);
+            float overlapTop = (ball.y + ballSize) - brickY;
+            float overlapBottom = (brickY + BRICK_H) - (ball.y - ballSize);
+
+            float minOverlapX = MIN(overlapLeft, overlapRight);
+            float minOverlapY = MIN(overlapTop, overlapBottom);
+
+            if (minOverlapX < minOverlapY) { // brick hit from side
+                ball.vx = -ball.vx;
+            } else {
+                ball.vy = -ball.vy;
+            }
+
+            bricks[i][j] = false;
+            bricksRemaining--;
+            score += (i+1) * 10;
+
+            if (bricksRemaining == 0) {
+                if (score > highScore) {
+                    highScore = score;
+                    gStorage.breakout_hs = (uint16_t)highScore;
+                    updateStorage();
                 }
+                breakoutState = BREAKOUT_WIN;
+                return;
             }
         }
     }
 
     if (ball.vx > MAX_BALL_SPEED) ball.vx = MAX_BALL_SPEED;
     if (ball.vx < -MAX_BALL_SPEED) ball.vx = -MAX_BALL_SPEED;
+    if (ball.vy > MAX_BALL_SPEED) ball.vy = MAX_BALL_SPEED;
+    if (ball.vy < -MAX_BALL_SPEED) ball.vy = -MAX_BALL_SPEED;
 }
 
 
@@ -301,6 +353,20 @@ void drawBreakoutGameOver() {
     snprintf(highbuf, sizeof(highbuf), "High: %d", highScore);
     sh110x_draw_text(20, 44, highbuf, 1);
 
+    sh110x_draw_text(5, 56, "A:Title      B:Exit", 1);
+}
+
+void drawBreakoutWin() {
+    sh110x_draw_text(20, 10, "YOU WIN!", 2);
+ 
+    char buf[20];
+    snprintf(buf, sizeof(buf), "Score: %d", score);
+    sh110x_draw_text(20, 32, buf, 1);
+ 
+    char highbuf[20];
+    snprintf(highbuf, sizeof(highbuf), "High: %d", highScore);
+    sh110x_draw_text(20, 44, highbuf, 1);
+ 
     sh110x_draw_text(5, 56, "A:Title      B:Exit", 1);
 }
 

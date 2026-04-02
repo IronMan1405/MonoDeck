@@ -57,6 +57,8 @@ void initSnake(void) {
     loadStorage();
     highScore = gStorage.snake_hs;
 
+    if (highScore < 0 || highScore > 999) highScore = 0;
+
     snakeLength = 3;
     snake[0] = (Point){GRID_W / 2, GRID_H / 2};
     snake[1] = (Point){snake[0].x - 1, snake[0].y};
