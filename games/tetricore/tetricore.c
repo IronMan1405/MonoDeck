@@ -22,7 +22,7 @@ TetricoreStates tetricoreState = TETRICORE_TITLE;
 #define GRID_H (64 / CELL_SIZE)
 
 #define FIELD_W 10
-#define FIELD_X ((GRID_W - FIELD_W) / 2) //- 8
+#define FIELD_X (((GRID_W - FIELD_W) / 2) - 6) // 5
 
 #define INFO_X (FIELD_X + FIELD_W) * CELL_SIZE + 6
 
@@ -92,6 +92,9 @@ static bool softDrop = false;
 unsigned long lastInput = 0;
 const unsigned long INPUT_DELAY = 120;
 
+unsigned long lastRotate = 0;
+const unsigned long ROTATE_DELAY = 80;
+
 const int TETRICORE_HIGHSCORE_ADDR = 12;
 static int highScore = 0;
 static int score;
@@ -101,6 +104,11 @@ ClearAnimState clearState = CLEAR_NONE;
 int clearRow = -1;
 unsigned long clearStart = 0;
 int pendingClearCount = 0;
+
+#define MAX_CLEAR_ROWS 4
+static int clearRows[MAX_CLEAR_ROWS];
+static int clearRowCount = 0;
+static int clearRowIndex = 0;
 
 static void handleTetricoreInput();
 static void drawTetricoreGame();
@@ -116,7 +124,7 @@ static void moveLeft();
 static void moveRight();
 static void clearLines();
 static void actuallyClearRow(int y);
-static void tryRotate();
+static void tryRotate(bool cw);
 static void applyTetrisScore(int lines);
 static bool canMove(int nx, int ny);
 static bool isRowFull(int y);
@@ -148,6 +156,12 @@ void initTetricore(void) {
     // next.type = (Shapes)random(0, 7);
     next.type = (Shapes) rand() % 7;
     next.rotation = 0;
+
+    clearRowCount = 0;
+    clearRowIndex = 0;
+    clearRow = -1;
+    clearState = CLEAR_NONE;
+    pendingClearCount = 0;
 }
 
 void updateTetricore(void) {
@@ -170,6 +184,8 @@ void updateTetricore(void) {
         }
         case TETRICORE_PLAYING: {
             handleTetricoreInput();
+
+            softDrop = isHeld(BTN_DOWN);
             
             unsigned long interval = softDrop ? SOFT_DROP_INTERVAL : FALL_INTERVAL;
             if (platform_millis() - lastFall >= interval) {
@@ -225,19 +241,39 @@ void updateTetricore(void) {
         }
     }
 
+    // if (clearState == CLEAR_FLASH) {
+    //     if (platform_millis() - clearStart > 120) {
+    //         clearState = CLEAR_NONE;
+    //         actuallyClearRow(clearRow);
+    //         clearRow = -1;
+
+    //         clearLines();
+
+    //         if (clearState == CLEAR_NONE && pendingClearCount > 0) {
+    //             applyTetrisScore(pendingClearCount);
+    //             pendingClearCount = 0;
+    //         }
+    //     }
+    //     return;
+    // }
     if (clearState == CLEAR_FLASH) {
         if (platform_millis() - clearStart > 120) {
-            clearState = CLEAR_NONE;
-            actuallyClearRow(clearRow);
-            clearRow = -1;
+            actuallyClearRow(clearRows[clearRowIndex]);
+            clearRowIndex++;
 
-            clearLines();
-
-            if (clearState == CLEAR_NONE && pendingClearCount > 0) {
-                applyTetrisScore(pendingClearCount);
-                pendingClearCount = 0;
+            if (clearRowIndex < clearRowCount) { // if has not cleared all clearable rows
+                for (int i = clearRowIndex; i < clearRowCount; i++) {
+                    clearRows[i]++;
+                }
+                clearStart = platform_millis();
+            } else {
+                applyTetrisScore(clearRowCount);
+                clearState = CLEAR_NONE;
+                clearRowCount = 0;
+                clearRowIndex = 0;
             }
         }
+
         return;
     }
 }
@@ -289,7 +325,10 @@ void handleTetricoreInput() {
     }
 
     if (isPressed(BTN_B)) {
-        tryRotate();
+        tryRotate(false);
+    }
+    if (isPressed(BTN_A)) {
+        tryRotate(true);
     }
 }
 
@@ -330,16 +369,26 @@ void moveRight() {
 }
 
 void clearLines() {
-    pendingClearCount = 0;
+    // pendingClearCount = 0;
+    clearRowCount = 0;
+    clearRowIndex = 0;
 
     for (int y = GRID_H - 1; y >= 0; y--) {
         if (isRowFull(y)) {
-            clearRow = y;
-            clearState = CLEAR_FLASH;
-            clearStart = platform_millis();
-            pendingClearCount++;
-            return;
+            // clearRow = y;
+            // clearState = CLEAR_FLASH;
+            // clearStart = platform_millis();
+            // pendingClearCount++;
+            clearRows[clearRowCount++] = y; // which rows to clear
+
+            if (clearRowCount >= MAX_CLEAR_ROWS) break; // stop iterating if count reached 4
+            // return;
         }
+    }
+
+    if (clearRowCount > 0) { //rows are to be cleared
+        clearState = CLEAR_FLASH;
+        clearStart = platform_millis();
     }
 }
 
@@ -434,10 +483,19 @@ bool canMoveRot(int nx, int ny, int rot) {
     return true;
 }
 
-void tryRotate() {
-    int newRot = (active.rotation + 1) % 4;
+void tryRotate(bool cw) {
+    int newRot = cw ? (active.rotation + 1) % 4 : (active.rotation + 3) % 4;
     if (canMoveRot(active.x, active.y, newRot)) {
         active.rotation = newRot;
+    } else {
+        int8_t kicks[4] = {-1, +1, -2, +2};
+        for (int i = 0; i < 4; i++) {
+            if (canMoveRot(active.x + kicks[i], active.y, newRot)) {
+                active.x += kicks[i];
+                active.rotation = newRot;
+                break;
+            }
+        }
     }
 }
 
@@ -459,15 +517,30 @@ void drawTetricoreGame() {
 
     for (int y = 0; y < GRID_H; y++) {
         for (int x = 0; x < GRID_W; x++) {
-        if (grid[y][x]) {
-            if (clearState == CLEAR_FLASH && y == clearRow) {
-                if (flashOn) {
+            if (grid[y][x]) {
+                // if (clearState == CLEAR_FLASH && y == clearRow) {
+                //     if (flashOn) {
+                //         drawBlock(x, y);
+                //     }
+                // } else {
+                //     drawBlock(x, y);
+                // }
+                bool isClearing = false;
+
+                if (clearState == CLEAR_FLASH) {
+                    for (int i = clearRowIndex; i < clearRowCount; i++) {
+                        if (y == clearRows[i]) {
+                            isClearing = true;
+                            break;
+                        }
+                    }
+                }
+                if (isClearing) {
+                    if (flashOn) drawBlock(x, y);
+                } else {
                     drawBlock(x, y);
                 }
-            } else {
-                drawBlock(x, y);
             }
-        }
         }
     }
 
@@ -479,10 +552,10 @@ void drawTetricoreGame() {
         }
     }
 
-    int left = (FIELD_X * CELL_SIZE) - 2;
-    int right = ((FIELD_X + FIELD_W) * CELL_SIZE) + 1;
+    int left = (FIELD_X * CELL_SIZE) - 2; //18
+    int right = ((FIELD_X + FIELD_W) * CELL_SIZE) + 1; // 61
 
-    sh110x_draw_line(left, 0, left, SCREEN_HEIGHT);
+    sh110x_draw_line(left - 2, 0, left - 2, SCREEN_HEIGHT);
     sh110x_draw_line(right, 0, right, SCREEN_HEIGHT);
 
     int uiX = (FIELD_X + FIELD_W) * CELL_SIZE + 8; // right of field

@@ -172,7 +172,7 @@ That's it. The menu, main loop, and state machine require no changes.
 
 - [x] Add Select & Start buttons interface
 - [x] Add persistent high score storing
-- [ ] Refine Scoring methods
+- [x] Refine Scoring methods
 - [ ] Add levels & game modes
 - [ ] Add PCB files and enclosure CAD files 
 - [ ] Implement Bi-directional rotation & wall kicks in Tetricore
