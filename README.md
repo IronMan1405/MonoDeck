@@ -175,8 +175,8 @@ That's it. The menu, main loop, and state machine require no changes.
 - [x] Refine Scoring methods
 - [ ] Add levels & game modes
 - [ ] Add PCB files and enclosure CAD files 
-- [ ] Implement Bi-directional rotation & wall kicks in Tetricore
-- [ ] UI enhancements
+- [x] Implement Bi-directional rotation & wall kicks in Tetricore
+- [x] UI/UX enhancements
 - [x] Fix reverse scroll
 
 ---
