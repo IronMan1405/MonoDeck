@@ -4,6 +4,11 @@
 	(generator_version "9.0")
 	(uuid "b6c6e953-c84d-46ed-bda1-7cb32900aaaa")
 	(paper "A4")
+	(title_block
+		(title "MonoDeck_v2.2.0")
+		(date "2026-04-04")
+		(rev "Rev2")
+	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x04_Socket"
 			(pin_names
@@ -1414,53 +1419,42 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_Push"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "R1966ABLKBLKGR:R1966ABLKBLKGR"
 			(pin_names
 				(offset 1.016)
-				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "SW"
-				(at 1.27 2.54 0)
+			(property "Reference" "S"
+				(at -5.08 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
+					(justify left bottom)
 				)
 			)
-			(property "Value" "SW_Push"
-				(at 0 -1.524 0)
+			(property "Value" "R1966ABLKBLKGR"
+				(at -5.08 -5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 5.08 0)
+			(property "Footprint" "R1966ABLKBLKGR:SW_R1966ABLKBLKGR"
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Push button switch, generic, two pins"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1469,7 +1463,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "switch normally-open pushbutton push-button"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1478,12 +1472,153 @@
 					(hide yes)
 				)
 			)
-			(symbol "SW_Push_0_1"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
+			(property "MF" "E-Switch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MAXIMUM_PACKAGE_HEIGHT" "14.8 mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Package" "None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Price" "None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Check_prices" "https://www.snapeda.com/parts/R1966ABLKBLKGR/E-Switch/view-part/?ref=eda"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "PARTREV" "E"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SnapEDA_Link" "https://www.snapeda.com/parts/R1966ABLKBLKGR/E-Switch/view-part/?ref=snap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MP" "R1966ABLKBLKGR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1603088&manufacturer=E-Switch&part_name=R1966ABLKBLKGR&search_term=None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "Rocker Switch,R1966 Series,SPST,ON-OFF,Concave,Black,I/O, 15A, 125VAC,R/A P | E-Switch R1966ABLKBLKGR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "E-Switch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Availability" "In Stock"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SNAPEDA_PN" "R1966ABLKBLKGR"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "R1966ABLKBLKGR_0_0"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -5.08 0)
+					)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
@@ -1492,10 +1627,10 @@
 				)
 				(polyline
 					(pts
-						(xy 0 1.27) (xy 0 3.048)
+						(xy -2.54 0) (xy 2.794 2.1336)
 					)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
@@ -1503,10 +1638,10 @@
 					)
 				)
 				(circle
-					(center 2.032 0)
-					(radius 0.508)
+					(center 2.54 0)
+					(radius 0.3302)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
@@ -1515,10 +1650,10 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 1.27) (xy -2.54 1.27)
+						(xy 5.08 0) (xy 2.921 0)
 					)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
@@ -1526,37 +1661,37 @@
 					)
 				)
 				(pin passive line
-					(at -5.08 0 0)
+					(at -7.62 0 0)
 					(length 2.54)
-					(name "1"
+					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
+					(at 7.62 0 180)
 					(length 2.54)
-					(name "2"
+					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "2"
+					(number "1A"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1564,31 +1699,42 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Switch:SW_SPST"
+		(symbol "SWT0211-050010GSA_REVA:SWT0211-050010GSA_REVA"
 			(pin_names
-				(offset 0)
-				(hide yes)
+				(offset 1.016)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "SW"
-				(at 0 3.175 0)
+			(property "Reference" "S"
+				(at -7.62 5.842 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Value" "SW_SPST"
-				(at 0 -2.54 0)
+			(property "Value" "SWT0211-050010GSA_REVA"
+				(at -7.62 -7.62 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify left bottom)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1597,7 +1743,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -1606,30 +1752,184 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Single Pole Single Throw (SPST) switch"
+			(property "MF" "Global Connector Technology"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "switch lever"
+			(property "MAXIMUM_PACKAGE_HEIGHT" "4.6mm"
 				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 					(hide yes)
 				)
 			)
-			(symbol "SW_SPST_0_0"
-				(circle
-					(center -2.032 0)
-					(radius 0.508)
+			(property "CREATOR" "ASHISH"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Price" "None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Package" "None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Check_prices" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=eda"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "PARTREV" "A"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "VERIFIER" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SnapEDA_Link" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=snap"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MP" "SWT0211-050010GSA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=18834140&manufacturer=Global Connector Technology&part_name=SWT0211-050010GSA&search_term=None"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Description_1" "4.5 x 4.5mm Surface Mount Tactile Switch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "Global Connector Technology"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Availability" "In Stock"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "SNAPEDA_PN" "SWT0211-050010GSA"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "SWT0211-050010GSA_REVA_0_0"
+				(rectangle
+					(start -7.62 -5.08)
+					(end 7.62 5.08)
 					(stroke
-						(width 0)
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 2.54) (xy -7.62 2.54)
+					)
+					(stroke
+						(width 0.1524)
 						(type default)
 					)
 					(fill
@@ -1638,10 +1938,58 @@
 				)
 				(polyline
 					(pts
-						(xy -1.524 0.254) (xy 1.524 1.778)
+						(xy -5.08 0) (xy -5.08 2.54)
 					)
 					(stroke
-						(width 0)
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0) (xy -5.08 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 0) (xy -3.048 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -2.54) (xy -7.62 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 1.5875) (xy 0 1.5875)
+					)
+					(stroke
+						(width 0.1524)
 						(type default)
 					)
 					(fill
@@ -1649,50 +1997,179 @@
 					)
 				)
 				(circle
-					(center 2.032 0)
+					(center -2.54 0)
 					(radius 0.508)
 					(stroke
-						(width 0)
+						(width 0.1524)
 						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-			)
-			(symbol "SW_SPST_1_1"
+				(polyline
+					(pts
+						(xy 0 1.5875) (xy 0 3.4925)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 1.5875) (xy 2.54 1.5875)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 0)
+					(radius 0.508)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 2.54) (xy 7.62 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 3.048 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 0) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -2.54) (xy 7.62 -2.54)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin passive line
-					(at -5.08 0 0)
+					(at -10.16 2.54 0)
 					(length 2.54)
-					(name "A"
+					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "1"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin passive line
-					(at 5.08 0 180)
+					(at -10.16 -2.54 0)
 					(length 2.54)
-					(name "B"
+					(name "~"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
 							)
 						)
 					)
 					(number "2"
 						(effects
 							(font
-								(size 1.27 1.27)
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 10.16 -2.54 180)
+					(length 2.54)
+					(name "~"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1903,77 +2380,11 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "V+"
-		(exclude_from_sim no)
-		(at 186.436 55.118 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "61240b9a-307e-4d85-8ad1-6f3e633a64f0")
-	)
-	(text "GND\n"
-		(exclude_from_sim no)
-		(at 194.056 65.024 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "7ccdd3e5-4bd4-4d49-b128-114d19425156")
-	)
-	(text "GND"
-		(exclude_from_sim no)
-		(at 98.552 84.582 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "bcfd0ff6-06e6-4da2-8d82-444186651e2c")
-	)
-	(text "SCL"
-		(exclude_from_sim no)
-		(at 106.7224 79.248 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "bff3cfd2-cb19-4721-8b5b-432b9b077233")
-	)
-	(text "SDA"
-		(exclude_from_sim no)
-		(at 106.172 76.708 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "f84e2271-bbb6-4e7e-9b1a-dc3c67430f0c")
-	)
-	(text "VCC"
-		(exclude_from_sim no)
-		(at 90.17 90.678 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "fd1f125c-d573-45e7-812f-434c86e32784")
-	)
 	(junction
-		(at 96.52 99.06)
+		(at 97.79 146.05)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "045e42ee-cfe4-4124-adf7-52288fab3795")
-	)
-	(junction
-		(at 191.77 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0d3ec9de-360d-44ad-8649-8aca422a5cf4")
+		(uuid "17c63027-5037-4ff7-af0d-d1cc6aaf8ec5")
 	)
 	(junction
 		(at 182.88 55.88)
@@ -1982,46 +2393,52 @@
 		(uuid "380687aa-fd08-40a8-bce4-aaaeb2a71305")
 	)
 	(junction
-		(at 96.52 114.3)
+		(at 20.32 119.38)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "6b0b9849-d91e-4c18-ad82-de0bfff68903")
+		(uuid "38df72bb-82da-4769-851f-f9df17e3a0be")
 	)
 	(junction
-		(at 96.52 109.22)
+		(at 97.79 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "76765a50-6513-47fd-860f-f40211d47689")
+		(uuid "4f0d2a15-fe7a-478f-8f3d-8e201a646bba")
 	)
 	(junction
-		(at 191.77 90.17)
+		(at 20.32 137.16)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "972e2dc1-0b37-4350-b9cf-6b4c89042eda")
+		(uuid "5fcc1c7b-b6d2-43c3-86d6-aaf968dbd86e")
 	)
 	(junction
-		(at 148.59 132.08)
+		(at 105.41 146.05)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "b99acdf6-0a93-41f8-af03-2cf91b1993d3")
+		(uuid "82da7ced-ffd4-46dc-b50e-0719dd7eca84")
 	)
 	(junction
-		(at 96.52 104.14)
+		(at 187.96 146.05)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "be273824-83ea-4b55-b003-24642caefe82")
+		(uuid "85ea976c-9da5-4783-81e2-8a688002cc5d")
 	)
 	(junction
-		(at 96.52 120.65)
+		(at 194.31 105.41)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "c30f22e8-03f8-45f8-93c0-dccc99f8be17")
+		(uuid "94b93416-78dd-4e7f-8bc7-838606e8e2d6")
 	)
 	(junction
-		(at 96.52 127)
+		(at 148.59 146.05)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f9114655-b111-4c49-967d-9895fa4213c2")
+		(uuid "e1a95b84-e250-445d-9cf3-a62d842c9e92")
+	)
+	(junction
+		(at 20.32 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e7ba6763-72da-436c-9ac1-5c7f528552b7")
 	)
 	(no_connect
 		(at 171.45 109.22)
@@ -2040,6 +2457,14 @@
 		(uuid "2ddee2a4-9b7b-417b-87d9-aef409f96e13")
 	)
 	(no_connect
+		(at 27.94 114.3)
+		(uuid "34a3762f-1398-49fa-9395-76b7302a536a")
+	)
+	(no_connect
+		(at 48.26 96.52)
+		(uuid "3cbc13f5-6a86-48f5-8431-9fa36724bab6")
+	)
+	(no_connect
 		(at 125.73 96.52)
 		(uuid "3ef9723b-7d72-4763-8acb-4b19c5eac584")
 	)
@@ -2056,8 +2481,24 @@
 		(uuid "48dc5b1d-e9fc-42d2-9174-642248d8c836")
 	)
 	(no_connect
+		(at 72.39 123.19)
+		(uuid "52eb17ce-46d4-47fa-99c6-776340c832f6")
+	)
+	(no_connect
+		(at 226.06 100.33)
+		(uuid "53a1d919-cc3e-4461-8a55-612f3b9572dd")
+	)
+	(no_connect
 		(at 125.73 86.36)
 		(uuid "56b5d783-f851-4b6f-8e3e-0dd5c0099e65")
+	)
+	(no_connect
+		(at 27.94 78.74)
+		(uuid "7c0e6fce-300d-4cd1-9e63-cc6122080af3")
+	)
+	(no_connect
+		(at 205.74 82.55)
+		(uuid "83411ae9-48f7-4fd2-800f-8621727a78d8")
 	)
 	(no_connect
 		(at 171.45 88.9)
@@ -2076,6 +2517,10 @@
 		(uuid "93354e6d-819f-40ac-9511-f533ed7a3f7e")
 	)
 	(no_connect
+		(at 205.74 100.33)
+		(uuid "99b2d2d5-a421-4e06-8361-a9a9df5fc6ed")
+	)
+	(no_connect
 		(at 171.45 99.06)
 		(uuid "9b5b61e0-1665-49e7-9b43-9aa1fbe17406")
 	)
@@ -2084,16 +2529,52 @@
 		(uuid "a75ca6bf-c289-4859-a1c9-85b28c0cbbd6")
 	)
 	(no_connect
+		(at 226.06 82.55)
+		(uuid "a8940109-f05f-4192-a498-7032920ec965")
+	)
+	(no_connect
+		(at 92.71 123.19)
+		(uuid "b30d9e58-a9dc-4c9e-8e7e-f253225ebe78")
+	)
+	(no_connect
 		(at 171.45 83.82)
 		(uuid "b529767e-f21a-4d8f-a0e1-57b739f9990a")
+	)
+	(no_connect
+		(at 48.26 78.74)
+		(uuid "b7d08d2c-0f58-44d9-9326-69b3422332f5")
 	)
 	(no_connect
 		(at 125.73 88.9)
 		(uuid "ba060516-2028-474b-beed-78cfaa86a262")
 	)
 	(no_connect
+		(at 27.94 96.52)
+		(uuid "be687bc7-c28f-44d6-b190-f62a0bec3daf")
+	)
+	(no_connect
+		(at 48.26 132.08)
+		(uuid "bf4f77d9-2a72-4070-9993-1f89c70d914d")
+	)
+	(no_connect
+		(at 27.94 132.08)
+		(uuid "c308558c-5fe5-428f-ac90-ca156cc0caa7")
+	)
+	(no_connect
 		(at 171.45 114.3)
 		(uuid "c584f866-56ab-46b9-8ab4-bb08ce93d68f")
+	)
+	(no_connect
+		(at 92.71 105.41)
+		(uuid "d978bd99-9e7a-404f-a247-92df437349ff")
+	)
+	(no_connect
+		(at 72.39 105.41)
+		(uuid "dbf12c09-fbcf-481d-bfa2-389f973048d4")
+	)
+	(no_connect
+		(at 48.26 114.3)
+		(uuid "e89b593c-7ba8-422d-8a38-a15e992e37f0")
 	)
 	(no_connect
 		(at 171.45 86.36)
@@ -2107,115 +2588,299 @@
 		(at 171.45 91.44)
 		(uuid "f56508ea-71d2-4add-8001-738b6124c99a")
 	)
-	(wire
+	(bus_entry
+		(at 109.22 111.76)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1a58fb0d-fa78-43d2-865f-ee84d177b471")
+	)
+	(bus_entry
+		(at 58.42 119.38)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1db9e4e6-cc8e-460f-a746-5088b2ce035e")
+	)
+	(bus_entry
+		(at 182.88 93.98)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33648bdc-1555-4818-8c42-ed1401d17a34")
+	)
+	(bus_entry
+		(at 237.49 90.17)
+		(size -2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "493690de-feb0-4fe1-a27c-f9da4406fbdc")
+	)
+	(bus_entry
+		(at 109.22 119.38)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a04951c-25a7-4564-a1c9-7eb4a3559600")
+	)
+	(bus_entry
+		(at 182.88 96.52)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "62d4e295-aaa1-45c8-a6dd-fe6fd98411ab")
+	)
+	(bus_entry
+		(at 58.42 101.6)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a4bd1aa-d0d7-44c5-9dc8-fe7e4dc5024f")
+	)
+	(bus_entry
+		(at 109.22 114.3)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "92841259-568e-4625-9039-f132c388f12b")
+	)
+	(bus_entry
+		(at 109.22 116.84)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9baac9ad-6682-46c0-9eb3-a067961d6a57")
+	)
+	(bus_entry
+		(at 237.49 107.95)
+		(size -2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a0fe62a6-1b19-4e5c-a60f-41f3f0d267d3")
+	)
+	(bus_entry
+		(at 58.42 83.82)
+		(size 2.54 2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b4a5cbef-f440-4519-8ef1-f595192f1e30")
+	)
+	(bus_entry
+		(at 60.96 130.81)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6b9c170-9640-4d1d-8d2f-abc196a41379")
+	)
+	(bus_entry
+		(at 60.96 113.03)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d8e437e7-5362-4de9-8bd0-57c46220280e")
+	)
+	(bus_entry
+		(at 109.22 121.92)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec1341e8-eae5-4cc1-8333-c9c0e465408d")
+	)
+	(bus_entry
+		(at 60.96 139.7)
+		(size -2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec35794b-314e-4d85-ac50-9fd949116bb4")
+	)
+	(bus_entry
+		(at 109.22 109.22)
+		(size 2.54 -2.54)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec7ca20b-a901-4841-a85f-64a1598db056")
+	)
+	(bus
 		(pts
-			(xy 114.3 106.68) (xy 125.73 106.68)
+			(xy 109.22 116.84) (xy 109.22 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "01157f6b-fa03-42c2-b35a-49e7c27761f9")
+		(uuid "00bf72fc-42e9-4413-a999-6d3d62e85441")
 	)
 	(wire
 		(pts
-			(xy 191.77 90.17) (xy 191.77 100.33)
+			(xy 27.94 137.16) (xy 20.32 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "01a6cd5d-5f26-4a77-85f4-d511704fbe12")
+		(uuid "011fd29c-f45d-4f91-bf8d-5e8a754616b2")
+	)
+	(bus
+		(pts
+			(xy 185.42 96.52) (xy 185.42 99.06)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02570b4d-7a65-40ef-8f24-100b298af481")
+	)
+	(bus
+		(pts
+			(xy 109.22 106.68) (xy 109.22 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "07880807-4bde-4046-9456-23024b40ba3e")
 	)
 	(wire
 		(pts
-			(xy 148.59 132.08) (xy 191.77 132.08)
+			(xy 171.45 93.98) (xy 182.88 93.98)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "0d29733f-6a96-49b3-a055-ee59fe68b507")
+		(uuid "0a295e50-fdc0-4a89-9e0f-d50fe65e3d92")
 	)
 	(wire
 		(pts
-			(xy 191.77 90.17) (xy 191.77 58.42)
+			(xy 148.59 146.05) (xy 148.59 158.75)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "168c6894-5262-43f8-bc4c-6c7fbc906e66")
+		(uuid "0fda0db7-e228-4b34-89f7-f3fe53286a72")
+	)
+	(bus
+		(pts
+			(xy 60.96 130.81) (xy 60.96 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "105d3410-cb29-4aa6-986c-84978a99bca5")
 	)
 	(wire
 		(pts
-			(xy 119.38 77.47) (xy 119.38 101.6)
+			(xy 111.76 119.38) (xy 125.73 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "193d2556-6dce-421f-b542-476c26904dff")
+		(uuid "11e3fbf3-485d-41af-af04-b7d636e0e198")
 	)
 	(wire
 		(pts
-			(xy 109.22 111.76) (xy 125.73 111.76)
+			(xy 194.31 105.41) (xy 205.74 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1b5cfdbd-452e-40d1-a275-693d89406c29")
+		(uuid "12071b1d-396b-4912-894a-4965396c7081")
+	)
+	(bus
+		(pts
+			(xy 185.42 99.06) (xy 185.42 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1873aa0e-b154-4ef6-9960-06104a6d0244")
 	)
 	(wire
 		(pts
-			(xy 106.68 109.22) (xy 109.22 109.22)
+			(xy 97.79 110.49) (xy 97.79 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1bb19d75-3bef-46d5-9a95-5246e95d0336")
+		(uuid "1a54a265-3aa2-4c75-bb20-97dd917d8e1f")
 	)
 	(wire
 		(pts
-			(xy 175.26 100.33) (xy 181.61 100.33)
+			(xy 194.31 146.05) (xy 187.96 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "1f97a6dd-bb3e-497f-98e9-7099ee3197b2")
+		(uuid "1c201b2d-b9f5-47c7-852a-0b5a3d4a4caf")
 	)
 	(wire
 		(pts
-			(xy 171.45 96.52) (xy 175.26 96.52)
+			(xy 20.32 83.82) (xy 20.32 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2b15de47-39e1-4b7c-b765-15b475a231dd")
+		(uuid "1f7df720-3f0d-4261-9cdd-a329e14ed44a")
 	)
 	(wire
 		(pts
-			(xy 175.26 90.17) (xy 181.61 90.17)
+			(xy 226.06 105.41) (xy 234.95 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2f2d1674-aaf2-40ee-812c-0c8e95367e57")
+		(uuid "219f47fb-54a3-481e-9d3d-7b2b46271401")
 	)
-	(wire
+	(bus
 		(pts
-			(xy 114.3 99.06) (xy 114.3 106.68)
+			(xy 109.22 111.76) (xy 109.22 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "345fc4c2-36d0-400a-aaff-1d105e0d5563")
+		(uuid "26a39c4d-9ede-4a6b-9527-95be32b4a72d")
 	)
 	(wire
 		(pts
@@ -2229,17 +2894,27 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 82.55) (xy 96.52 99.06)
+			(xy 148.59 132.08) (xy 148.59 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3850bf4c-1b7f-4841-b722-667350127a83")
+		(uuid "3a29a58e-4dcc-4a11-a002-9430a504bab6")
 	)
 	(wire
 		(pts
-			(xy 148.59 55.88) (xy 170.18 55.88)
+			(xy 20.32 119.38) (xy 20.32 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bc0521e-217d-4f20-87d2-7caeba004dfb")
+	)
+	(wire
+		(pts
+			(xy 148.59 55.88) (xy 162.56 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2249,53 +2924,83 @@
 	)
 	(wire
 		(pts
-			(xy 175.26 93.98) (xy 175.26 90.17)
+			(xy 48.26 119.38) (xy 58.42 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "3e5af8af-3ea9-4724-8565-4521975b3f0d")
+		(uuid "3d8d430b-3f2d-40c7-abb0-d2c708c44993")
 	)
 	(wire
 		(pts
-			(xy 106.68 120.65) (xy 107.95 120.65)
+			(xy 194.31 87.63) (xy 194.31 105.41)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "508129e3-269b-4b4e-a11e-88507560f3de")
+		(uuid "406734cb-858e-44af-be73-58c96eb49413")
+	)
+	(bus
+		(pts
+			(xy 60.96 113.03) (xy 60.96 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "43abb585-1f74-45c5-8416-a91ac05b4476")
 	)
 	(wire
 		(pts
-			(xy 96.52 109.22) (xy 96.52 114.3)
+			(xy 177.8 55.88) (xy 182.88 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5442f93f-a076-48c1-896c-2362e8fc4c47")
+		(uuid "43b925fd-74e8-4df1-9843-141b47a6d54d")
 	)
 	(wire
 		(pts
-			(xy 107.95 116.84) (xy 125.73 116.84)
+			(xy 226.06 87.63) (xy 234.95 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5458352b-c80d-4034-a556-9dbe11a1ce36")
+		(uuid "45213115-9fbe-4740-8812-be2b0a427db1")
+	)
+	(bus
+		(pts
+			(xy 60.96 64.77) (xy 60.96 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "457856e5-f1ae-4ad5-bbab-384fe80967d0")
 	)
 	(wire
 		(pts
-			(xy 95.25 91.44) (xy 78.74 91.44)
+			(xy 205.74 87.63) (xy 194.31 87.63)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "5bfa6ddd-4bfb-41f4-adc2-7444172697f3")
+		(uuid "4751381c-6df6-437c-b9ac-e429b3c25604")
+	)
+	(wire
+		(pts
+			(xy 48.26 83.82) (xy 58.42 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b64743e-b1cd-4cd2-b6a5-7b8143087cea")
 	)
 	(wire
 		(pts
@@ -2305,7 +3010,87 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "5f117184-a149-4c2b-b042-5868abb6432a")
+		(uuid "4b697172-2379-45a7-9e14-3f2376cb8153")
+	)
+	(wire
+		(pts
+			(xy 97.79 146.05) (xy 105.41 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4f1e679b-b771-4ba0-a932-a0374ad72e1c")
+	)
+	(wire
+		(pts
+			(xy 187.96 58.42) (xy 187.96 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "529f2fae-d12e-40c8-a147-ddcc8e0bb19b")
+	)
+	(bus
+		(pts
+			(xy 60.96 121.92) (xy 60.96 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52b678a8-06a4-4396-b48e-cd5215c7a92f")
+	)
+	(wire
+		(pts
+			(xy 107.95 104.14) (xy 125.73 104.14)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "54d9d8a9-73ee-4de4-810f-46d27c5c2894")
+	)
+	(wire
+		(pts
+			(xy 27.94 83.82) (xy 20.32 83.82)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "572d8857-d2a3-461f-bc3b-c6b35bd59853")
+	)
+	(wire
+		(pts
+			(xy 63.5 110.49) (xy 72.39 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5bc6fb29-4078-4c56-b39a-9c52279baffa")
+	)
+	(wire
+		(pts
+			(xy 102.87 81.28) (xy 96.52 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5bfa6ddd-4bfb-41f4-adc2-7444172697f3")
+	)
+	(bus
+		(pts
+			(xy 237.49 72.39) (xy 237.49 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dcb0838-88d8-48c9-9d21-ed7d65ba05c7")
 	)
 	(wire
 		(pts
@@ -2319,17 +3104,37 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 104.14) (xy 111.76 104.14)
+			(xy 148.59 146.05) (xy 187.96 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6137b7d1-0eb3-4682-9d2b-6bbc5e0e9159")
+		(uuid "61cf0eea-6da2-445b-beca-88b619934117")
+	)
+	(bus
+		(pts
+			(xy 237.49 90.17) (xy 237.49 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "645e2d81-255b-4575-9b7e-94224158247a")
+	)
+	(bus
+		(pts
+			(xy 60.96 104.14) (xy 60.96 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "66496605-2314-4e64-97cd-2e5049691b5f")
 	)
 	(wire
 		(pts
-			(xy 119.38 101.6) (xy 125.73 101.6)
+			(xy 110.49 101.6) (xy 125.73 101.6)
 		)
 		(stroke
 			(width 0)
@@ -2339,7 +3144,7 @@
 	)
 	(wire
 		(pts
-			(xy 78.74 91.44) (xy 78.74 52.07)
+			(xy 96.52 81.28) (xy 96.52 52.07)
 		)
 		(stroke
 			(width 0)
@@ -2349,197 +3154,247 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 132.08) (xy 96.52 127)
+			(xy 97.79 128.27) (xy 97.79 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6b1ed9b0-08f0-4481-b114-1cdd800ebfcf")
+		(uuid "71493434-32b0-4c11-9adb-5cb86d31e35b")
 	)
 	(wire
 		(pts
-			(xy 96.52 114.3) (xy 96.52 120.65)
+			(xy 111.76 106.68) (xy 125.73 106.68)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6c07c7f6-98d0-4e7f-9afa-15d6165276d4")
+		(uuid "721cf8db-7dd5-4fcf-a7c6-4fadb733699b")
 	)
 	(wire
 		(pts
-			(xy 148.59 132.08) (xy 96.52 132.08)
+			(xy 111.76 116.84) (xy 125.73 116.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "6e81fceb-dded-494c-957a-43a5ecaf7219")
+		(uuid "731dda9e-eddf-4eba-959d-d641ee657964")
 	)
 	(wire
 		(pts
-			(xy 96.52 104.14) (xy 96.52 109.22)
+			(xy 20.32 101.6) (xy 20.32 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "724fd26f-5828-4a11-b907-b23cd256c3d3")
+		(uuid "7663ff17-c892-43d1-87d2-a5e80ea077b6")
 	)
 	(wire
 		(pts
-			(xy 95.25 85.09) (xy 95.25 91.44)
+			(xy 107.95 104.14) (xy 107.95 76.2)
+		)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(uuid "7ab1b6c7-295b-4383-9f01-85b928ff9391")
+	)
+	(bus
+		(pts
+			(xy 109.22 121.92) (xy 109.22 124.46)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "72bfdaeb-49e4-4137-b593-3910a81408e9")
+		(uuid "7ad249ed-16c5-4177-8da4-dd3e09625626")
 	)
 	(wire
 		(pts
-			(xy 175.26 96.52) (xy 175.26 100.33)
+			(xy 105.41 146.05) (xy 148.59 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "77285ef7-7efc-4e01-b522-16fa58fe8abf")
+		(uuid "8096b7ef-6fb8-412e-bc4c-adab83996ef5")
 	)
-	(wire
+	(bus
 		(pts
-			(xy 95.25 82.55) (xy 96.52 82.55)
+			(xy 237.49 107.95) (xy 237.49 113.03)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7b84cae3-be40-4171-89c8-bb8ea59213ba")
+		(uuid "80a4bab5-228f-4523-a3bb-f75eea7348b5")
 	)
 	(wire
 		(pts
-			(xy 106.68 99.06) (xy 114.3 99.06)
+			(xy 110.49 76.2) (xy 110.49 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "7e68ef7c-141f-4e7b-a806-cd3ebc75a722")
+		(uuid "868f6b53-2525-4f8c-9dd1-81a52be78bf5")
 	)
 	(wire
 		(pts
-			(xy 96.52 120.65) (xy 96.52 127)
+			(xy 111.76 114.3) (xy 125.73 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "83eade5f-db07-4cb5-85cb-d0b8a29dbc28")
+		(uuid "8f12df1a-1757-459a-9de2-bb78718dbe13")
 	)
-	(wire
+	(bus
 		(pts
-			(xy 116.84 80.01) (xy 95.25 80.01)
+			(xy 109.22 111.76) (xy 109.22 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8b5ad0eb-aa26-465f-88a9-d76799e4ea80")
+		(uuid "900848bd-7e06-40a1-9d3d-9e79df2424a6")
 	)
 	(wire
 		(pts
-			(xy 111.76 109.22) (xy 111.76 104.14)
+			(xy 92.71 128.27) (xy 97.79 128.27)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "ad2c1cf7-4030-4587-8e44-d446c6ffb319")
+		(uuid "90a4c83a-8b9b-4ef1-a91e-dc58faf4b8bb")
 	)
 	(wire
 		(pts
-			(xy 95.25 77.47) (xy 119.38 77.47)
+			(xy 20.32 119.38) (xy 27.94 119.38)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "aec89650-22b3-4be5-b975-923983708e8d")
+		(uuid "91cc3071-239f-42eb-a154-a25db974adbe")
 	)
-	(wire
+	(bus
 		(pts
-			(xy 191.77 132.08) (xy 191.77 100.33)
+			(xy 185.42 81.28) (xy 185.42 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b07b12b2-f7f5-42a6-b908-2f6719fb40ea")
+		(uuid "93812025-2a72-4115-bdd0-3044babb26dd")
 	)
 	(wire
 		(pts
-			(xy 106.68 114.3) (xy 125.73 114.3)
+			(xy 92.71 110.49) (xy 97.79 110.49)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b2647401-76c0-4891-9d1d-39b3120dbb94")
+		(uuid "97784fd2-0ed1-46a6-ae35-bfb475bbd63c")
 	)
 	(wire
 		(pts
-			(xy 116.84 104.14) (xy 116.84 80.01)
+			(xy 48.26 137.16) (xy 58.42 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b557e757-1ec1-4baf-af2d-75c365ee4a39")
+		(uuid "98baa3cd-b886-4a65-8324-1764d0672415")
 	)
 	(wire
 		(pts
-			(xy 180.34 55.88) (xy 182.88 55.88)
+			(xy 105.41 76.2) (xy 105.41 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "b9514249-1676-4465-a7c4-5bb6516332f0")
+		(uuid "b1838d8a-b26d-4aa5-b8df-cd24d1d6e59b")
 	)
 	(wire
 		(pts
-			(xy 107.95 120.65) (xy 107.95 116.84)
+			(xy 182.88 43.18) (xy 182.88 55.88)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "bfb444d6-939f-43e6-bc90-23fa1f4e99dc")
+		(uuid "b7fed659-4dd8-4aa3-a338-ee3fdf75f541")
 	)
-	(wire
+	(bus
 		(pts
-			(xy 125.73 104.14) (xy 116.84 104.14)
+			(xy 109.22 119.38) (xy 109.22 116.84)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c9f03579-e737-420e-a43e-ca2127d13b8f")
+		(uuid "b9990fb6-6ec3-45de-bbf9-562d9f83d6f5")
 	)
 	(wire
 		(pts
-			(xy 109.22 109.22) (xy 109.22 111.76)
+			(xy 194.31 105.41) (xy 194.31 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "cceb4142-1aca-4899-83c1-53e57c6e1205")
+		(uuid "b9b6938b-f185-48a8-bf72-d593253e3b67")
 	)
 	(wire
 		(pts
-			(xy 78.74 52.07) (xy 153.67 52.07)
+			(xy 20.32 146.05) (xy 97.79 146.05)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf4909ef-89a4-4ce5-ac08-7db98b04ce84")
+	)
+	(wire
+		(pts
+			(xy 187.96 58.42) (xy 191.77 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bfd072cd-5eae-4f68-bf41-1d49e5651a19")
+	)
+	(wire
+		(pts
+			(xy 20.32 101.6) (xy 27.94 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c3226bc3-9331-4ee2-afa6-c68f283aa593")
+	)
+	(wire
+		(pts
+			(xy 102.87 76.2) (xy 102.87 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5cded0c-9f65-4fc9-bf50-b78449937c7a")
+	)
+	(wire
+		(pts
+			(xy 96.52 52.07) (xy 153.67 52.07)
 		)
 		(stroke
 			(width 0)
@@ -2549,13 +3404,43 @@
 	)
 	(wire
 		(pts
-			(xy 96.52 104.14) (xy 96.52 99.06)
+			(xy 20.32 137.16) (xy 20.32 146.05)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d7dc6541-eb11-4855-bc83-0d5c26b5c116")
+		(uuid "d242f16f-8e2b-45c1-a8cc-14d4f9ed002f")
+	)
+	(bus
+		(pts
+			(xy 60.96 139.7) (xy 60.96 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6c18b29-5c55-4aa1-a712-f7aafe929e48")
+	)
+	(wire
+		(pts
+			(xy 63.5 128.27) (xy 72.39 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d79a28a5-91d8-4854-9850-eabc8d0ef914")
+	)
+	(bus
+		(pts
+			(xy 109.22 119.38) (xy 109.22 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7e43017-6a67-4840-b915-de9355a49d9d")
 	)
 	(wire
 		(pts
@@ -2569,45 +3454,551 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 93.98) (xy 175.26 93.98)
+			(xy 171.45 96.52) (xy 182.88 96.52)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e3d543d8-4592-4819-8b2e-c57a4da0e755")
+		(uuid "eb6a1921-eeab-4228-af6f-483dfdcffc50")
 	)
 	(wire
 		(pts
-			(xy 106.68 127) (xy 125.73 127)
+			(xy 48.26 101.6) (xy 58.42 101.6)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "e74a8325-8ebd-4db3-9a7d-4304de157e7d")
+		(uuid "f3d5cbc6-4438-4efe-9ea8-d69547356050")
 	)
 	(wire
 		(pts
-			(xy 125.73 127) (xy 125.73 119.38)
+			(xy 111.76 111.76) (xy 125.73 111.76)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "fd7f350e-8dcb-4b5b-8c64-3d28d01a5216")
+		(uuid "fb1bdb7d-2867-4cf5-be63-2aa488061097")
+	)
+	(bus
+		(pts
+			(xy 60.96 86.36) (xy 60.96 104.14)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ffc08162-f479-47c1-96d4-19c85c6e8afb")
+	)
+	(label "GPIO14"
+		(at 111.76 116.84 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1a7c1ac7-0891-4ff6-a07c-eef143e2388f")
+	)
+	(label "GPIO21"
+		(at 182.88 96.52 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "1f73761e-9739-479b-b7c2-0da0e125e043")
+	)
+	(label "SCL"
+		(at 107.95 81.28 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "2461b013-f407-4433-9025-c3f132820bf7")
+	)
+	(label "GND"
+		(at 105.41 81.28 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4f05efb0-b88d-42f0-8fd7-a2120f93e315")
+	)
+	(label "GPIO[20..21]"
+		(at 237.49 72.39 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "77f56761-0f75-4191-906a-7f15236ad425")
+	)
+	(label "GPIO20"
+		(at 234.95 87.63 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "79f85eb3-f5cb-4029-b841-ceefd70179a2")
+	)
+	(label "GPIO[20..21]"
+		(at 185.42 81.28 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "7ad8c321-a63e-4c38-bb12-0dcd4025eaf6")
+	)
+	(label "GPIO10"
+		(at 111.76 106.68 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "891def78-f788-459d-ad83-694a9296f720")
+	)
+	(label "GPIO21"
+		(at 234.95 105.41 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "8b027fb0-dd90-4ad9-ae0c-cde76791db2d")
+	)
+	(label "GPIO15"
+		(at 111.76 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "9240c292-0242-4838-ad41-56f60593e060")
+	)
+	(label "GPIO11"
+		(at 50.8 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "943de672-1853-42d9-b4e0-da132b36b5d2")
+	)
+	(label "GPIO20"
+		(at 182.88 93.98 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "ac30bf22-0529-42f5-84b2-2f8fadb065fb")
+	)
+	(label "GPIO14"
+		(at 63.5 110.49 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b5f41c21-c63c-4b16-89b4-294591c72a2d")
+	)
+	(label "GPIO[10..15]"
+		(at 60.96 64.77 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c332d505-a593-4dcf-bda1-da6d85e7224d")
+	)
+	(label "GPIO10"
+		(at 50.8 83.82 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d1ce7a93-2730-4d0f-98eb-34db78be52ca")
+	)
+	(label "V+"
+		(at 182.88 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d6d84516-04a3-49fb-885f-29474aad9ec5")
+	)
+	(label "GPIO13"
+		(at 111.76 114.3 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d81b9425-822e-49a5-a2df-31a7c8b8e5d5")
+	)
+	(label "GPIO11"
+		(at 111.76 109.22 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d85e4ec2-5e37-40a4-9284-af57f10fdba5")
+	)
+	(label "GPIO[10..15]"
+		(at 109.22 124.46 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d9f522bf-22f1-458a-b0ce-d91e38622bc6")
+	)
+	(label "GPIO13"
+		(at 50.8 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e1a08f43-121a-4086-9d62-5a859c8639cc")
+	)
+	(label "VCC"
+		(at 102.87 81.28 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e3e6b22c-1579-4194-bce6-556d3aa5f816")
+	)
+	(label "GPIO12"
+		(at 111.76 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e71c5f82-1cdf-4117-97b8-7caf79f9c8e0")
+	)
+	(label "GPIO12"
+		(at 50.8 119.38 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ea0e278a-138f-4aae-b73f-af67ac722475")
+	)
+	(label "GPIO15"
+		(at 63.5 128.27 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f750f2bb-044b-44b4-9394-4a67e9db167a")
+	)
+	(label "GND"
+		(at 187.96 58.42 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "f9bb8f02-de24-4feb-aca6-0ce2fda6a5fb")
+	)
+	(label "SDA"
+		(at 110.49 81.28 90)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ff8e4608-83eb-4e52-9e12-79367f8173f8")
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 101.6 104.14 0)
+		(lib_id "SWT0211-050010GSA_REVA:SWT0211-050010GSA_REVA")
+		(at 38.1 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "328dbdbe-2a25-42b1-831b-6886f5b46547")
-		(property "Reference" "SW2"
-			(at 91.694 101.854 0)
+		(fields_autoplaced yes)
+		(uuid "052f12f1-4e44-4437-8a86-262945271914")
+		(property "Reference" "S1"
+			(at 38.1 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "UP"
+			(at 38.1 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Global Connector Technology"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "4.6mm"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CREATOR" "ASHISH"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=eda"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "A"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=snap"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SWT0211-050010GSA"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=18834140&manufacturer=Global Connector Technology&part_name=SWT0211-050010GSA&search_term=None"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "4.5 x 4.5mm Surface Mount Tactile Switch"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Global Connector Technology"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "SWT0211-050010GSA"
+			(at 38.1 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "dab43a61-84d5-46ce-b861-f3ee56e25bc4")
+		)
+		(pin "1"
+			(uuid "dfa0ade1-3c85-4c47-b28b-9915f977c441")
+		)
+		(pin "4"
+			(uuid "80f919ec-e29b-4bc0-8563-ccd9bcab9ee4")
+		)
+		(pin "2"
+			(uuid "64f2015a-8526-46f9-83ff-dd561d91287a")
+		)
+		(instances
+			(project ""
+				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
+					(reference "S1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SWT0211-050010GSA_REVA:SWT0211-050010GSA_REVA")
+		(at 38.1 99.06 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "1231c979-1737-4c8c-8082-4ead678733f5")
+		(property "Reference" "S2"
+			(at 38.1 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2615,15 +4006,25 @@
 			)
 		)
 		(property "Value" "DOWN"
-			(at 91.694 104.394 0)
+			(at 38.1 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 101.6 99.06 0)
+		(property "Footprint" "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2631,8 +4032,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 101.6 99.06 0)
+		(property "Description" ""
+			(at 38.1 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2640,25 +4041,390 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 101.6 104.14 0)
+		(property "MF" "Global Connector Technology"
+			(at 38.1 99.06 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
 				(hide yes)
 			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "4.6mm"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CREATOR" "ASHISH"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=eda"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "A"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=snap"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SWT0211-050010GSA"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=18834140&manufacturer=Global Connector Technology&part_name=SWT0211-050010GSA&search_term=None"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "4.5 x 4.5mm Surface Mount Tactile Switch"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Global Connector Technology"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "SWT0211-050010GSA"
+			(at 38.1 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "0a728c41-ec42-4719-be85-16f75b611ed8")
 		)
 		(pin "1"
-			(uuid "2c277e03-bfc0-4b81-a206-e894e620b971")
+			(uuid "caea472c-7efe-427b-a908-d47cc9883d50")
+		)
+		(pin "4"
+			(uuid "a0e20ab9-0e0a-43cc-8b17-58ec1f30f523")
 		)
 		(pin "2"
-			(uuid "a6361b29-4a3a-43b0-acfc-0c684bc66c2a")
+			(uuid "36a46299-2f79-4529-94dc-2ecddec1a61e")
 		)
 		(instances
 			(project "monodeck_v2.2.0_pcb"
 				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
-					(reference "SW2")
+					(reference "S2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "R1966ABLKBLKGR:R1966ABLKBLKGR")
+		(at 170.18 55.88 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "326f13c9-5531-4c4b-9b3d-2dace5f192fd")
+		(property "Reference" "PWR1"
+			(at 170.688 57.912 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "R1966ABLKBLKGR"
+			(at 170.688 60.452 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "R1966ABLKBLKGR:SW_R1966ABLKBLKGR"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "E-Switch"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "14.8 mm"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/R1966ABLKBLKGR/E-Switch/view-part/?ref=eda"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "E"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/R1966ABLKBLKGR/E-Switch/view-part/?ref=snap"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "R1966ABLKBLKGR"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=1603088&manufacturer=E-Switch&part_name=R1966ABLKBLKGR&search_term=None"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "Rocker Switch,R1966 Series,SPST,ON-OFF,Concave,Black,I/O, 15A, 125VAC,R/A P | E-Switch R1966ABLKBLKGR"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "E-Switch"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "R1966ABLKBLKGR"
+			(at 170.18 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b6a812cf-e928-41cb-861c-8a96d22f91b3")
+		)
+		(pin "1A"
+			(uuid "526b8485-00b9-4721-862a-87944db339d7")
+		)
+		(instances
+			(project ""
+				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
+					(reference "PWR1")
 					(unit 1)
 				)
 			)
@@ -2666,7 +4432,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x04_Socket")
-		(at 90.17 82.55 180)
+		(at 105.41 71.12 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2675,7 +4441,7 @@
 		(fields_autoplaced yes)
 		(uuid "3886eda8-2e6b-493b-82f1-1b0c5321152b")
 		(property "Reference" "OLED1"
-			(at 90.805 72.39 0)
+			(at 106.68 66.04 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2683,15 +4449,15 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Socket"
-			(at 90.805 74.93 0)
+			(at 106.68 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 90.17 82.55 0)
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical"
+			(at 105.41 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2700,7 +4466,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 90.17 82.55 0)
+			(at 105.41 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2709,7 +4475,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 90.17 82.55 0)
+			(at 105.41 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2740,7 +4506,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 148.59 132.08 0)
+		(at 148.59 158.75 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2749,7 +4515,7 @@
 		(fields_autoplaced yes)
 		(uuid "479d4b7f-9345-4ee9-80a3-3481a6c09004")
 		(property "Reference" "#PWR01"
-			(at 148.59 138.43 0)
+			(at 148.59 165.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2758,7 +4524,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 148.59 137.16 0)
+			(at 148.59 163.83 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2766,7 +4532,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 148.59 132.08 0)
+			(at 148.59 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2775,7 +4541,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 148.59 132.08 0)
+			(at 148.59 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2784,7 +4550,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 148.59 132.08 0)
+			(at 148.59 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2805,16 +4571,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 101.6 114.3 0)
+		(lib_id "SWT0211-050010GSA_REVA:SWT0211-050010GSA_REVA")
+		(at 38.1 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "66c12683-337c-4cdb-9206-984d2e24cd8e")
-		(property "Reference" "SW4"
-			(at 92.456 112.776 0)
+		(fields_autoplaced yes)
+		(uuid "7685c630-5f9b-4f8f-b996-c0b1b5ebd2d7")
+		(property "Reference" "S4"
+			(at 38.1 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2822,15 +4589,25 @@
 			)
 		)
 		(property "Value" "RIGHT"
-			(at 92.456 115.316 0)
+			(at 38.1 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 101.6 109.22 0)
+		(property "Footprint" "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2838,8 +4615,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 101.6 109.22 0)
+		(property "Description" ""
+			(at 38.1 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2847,160 +4624,182 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 101.6 114.3 0)
+		(property "MF" "Global Connector Technology"
+			(at 38.1 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
 				(hide yes)
 			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "4.6mm"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CREATOR" "ASHISH"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=eda"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "A"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=snap"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SWT0211-050010GSA"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=18834140&manufacturer=Global Connector Technology&part_name=SWT0211-050010GSA&search_term=None"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "4.5 x 4.5mm Surface Mount Tactile Switch"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Global Connector Technology"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "SWT0211-050010GSA"
+			(at 38.1 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "7d3c627c-e0ae-49f3-b86c-d006f5673b75")
 		)
 		(pin "1"
-			(uuid "50922040-f479-4fac-ade0-80a200ce5b71")
+			(uuid "3c214a09-3c8b-4dbc-8ca2-028b086ae00f")
+		)
+		(pin "4"
+			(uuid "376c40a9-2da8-4ecc-9e8b-28d8a4ea1be0")
 		)
 		(pin "2"
-			(uuid "c094c3df-59d5-4f35-b1cb-900fb0ceb110")
+			(uuid "f8a9cd22-0e0c-4f5a-b19f-470b293a63c1")
 		)
 		(instances
 			(project "monodeck_v2.2.0_pcb"
 				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
-					(reference "SW4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 186.69 100.33 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "888dd870-6734-41be-b41b-3f02c9447f04")
-		(property "Reference" "SW6"
-			(at 186.69 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "START"
-			(at 186.69 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 186.69 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 186.69 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 186.69 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f7acbbb0-1b75-40c1-b50d-79c02ecd8c75")
-		)
-		(pin "2"
-			(uuid "e805bc80-9ce0-4302-bfcb-60512a8906c6")
-		)
-		(instances
-			(project "monodeck_v2.2.0_pcb"
-				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
-					(reference "SW6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_SPST")
-		(at 175.26 55.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "911697e5-bb85-44eb-a591-48e4e73c4743")
-		(property "Reference" "PWR1"
-			(at 174.752 58.166 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SW_SPST"
-			(at 174.752 60.706 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 175.26 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 175.26 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Single Pole Single Throw (SPST) switch"
-			(at 175.26 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3bf236a1-6d44-4178-9dd2-bba906964d1a")
-		)
-		(pin "2"
-			(uuid "083072fa-71a9-4fc2-a009-4cbfa04dc8db")
-		)
-		(instances
-			(project ""
-				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
-					(reference "PWR1")
+					(reference "S4")
 					(unit 1)
 				)
 			)
@@ -3008,7 +4807,7 @@
 	)
 	(symbol
 		(lib_id "power:PWR_FLAG")
-		(at 182.88 55.88 0)
+		(at 182.88 43.18 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3017,7 +4816,7 @@
 		(fields_autoplaced yes)
 		(uuid "94176a49-8e12-45af-9be7-7b445799580f")
 		(property "Reference" "#FLG01"
-			(at 182.88 53.975 0)
+			(at 182.88 41.275 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3026,7 +4825,7 @@
 			)
 		)
 		(property "Value" "PWR_FLAG"
-			(at 182.88 50.8 0)
+			(at 182.88 38.1 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3034,7 +4833,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 182.88 55.88 0)
+			(at 182.88 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3043,7 +4842,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 182.88 55.88 0)
+			(at 182.88 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3052,7 +4851,7 @@
 			)
 		)
 		(property "Description" "Special symbol for telling ERC where power comes from"
-			(at 182.88 55.88 0)
+			(at 182.88 43.18 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3067,6 +4866,476 @@
 			(project ""
 				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
 					(reference "#FLG01")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SWT0211-050010GSA_REVA:SWT0211-050010GSA_REVA")
+		(at 215.9 102.87 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "94b21dd9-bfca-4745-bdbd-6f45a3e4bcbf")
+		(property "Reference" "S8"
+			(at 215.9 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "START"
+			(at 215.9 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Global Connector Technology"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "4.6mm"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CREATOR" "ASHISH"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=eda"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "A"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=snap"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SWT0211-050010GSA"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=18834140&manufacturer=Global Connector Technology&part_name=SWT0211-050010GSA&search_term=None"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "4.5 x 4.5mm Surface Mount Tactile Switch"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Global Connector Technology"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "SWT0211-050010GSA"
+			(at 215.9 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "e89e3981-f4e2-4348-9606-e55cc2e08e86")
+		)
+		(pin "1"
+			(uuid "716fb35f-53ab-4a23-92d1-8402d79d5f92")
+		)
+		(pin "4"
+			(uuid "7d009a16-c5ca-4eab-9002-b004a46b0f45")
+		)
+		(pin "2"
+			(uuid "f72b090b-69e5-495d-99df-173c3c509435")
+		)
+		(instances
+			(project "monodeck_v2.2.0_pcb"
+				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
+					(reference "S8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SWT0211-050010GSA_REVA:SWT0211-050010GSA_REVA")
+		(at 82.55 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a287300e-45b9-4b40-98d9-b881b14bba6a")
+		(property "Reference" "S6"
+			(at 82.55 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "A"
+			(at 82.55 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Global Connector Technology"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "4.6mm"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CREATOR" "ASHISH"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=eda"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "A"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=snap"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SWT0211-050010GSA"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=18834140&manufacturer=Global Connector Technology&part_name=SWT0211-050010GSA&search_term=None"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "4.5 x 4.5mm Surface Mount Tactile Switch"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Global Connector Technology"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "SWT0211-050010GSA"
+			(at 82.55 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "82b19289-cc5b-4d59-aae1-cb367152e2bf")
+		)
+		(pin "1"
+			(uuid "e4c64124-5584-44b4-b6ff-1e0214b78012")
+		)
+		(pin "4"
+			(uuid "a9efe55a-51d7-46e2-9ac3-c0d6987a66dc")
+		)
+		(pin "2"
+			(uuid "88a50625-57d1-44a0-a5a5-fc52092c01c1")
+		)
+		(instances
+			(project "monodeck_v2.2.0_pcb"
+				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
+					(reference "S6")
 					(unit 1)
 				)
 			)
@@ -3257,151 +5526,17 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 101.6 127 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b7eb8f76-8171-4393-9035-eba3ddf1898a")
-		(property "Reference" "SW8"
-			(at 93.218 125.476 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "A"
-			(at 93.218 128.016 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.6 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 101.6 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 101.6 127 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e18662a2-4fd3-4a94-90be-4acd2ab13326")
-		)
-		(pin "2"
-			(uuid "fe3a651b-4f09-4d05-a036-8e5b6f9a3ab6")
-		)
-		(instances
-			(project "monodeck_v2.2.0_pcb"
-				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
-					(reference "SW8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 186.69 90.17 0)
+		(lib_id "SWT0211-050010GSA_REVA:SWT0211-050010GSA_REVA")
+		(at 38.1 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
-		(uuid "c27c895d-234b-4dc6-a487-44d9bba97482")
-		(property "Reference" "SW5"
-			(at 186.69 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SELECT"
-			(at 186.69 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 186.69 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 186.69 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 186.69 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b5ceb133-abec-416d-ade5-429610000346")
-		)
-		(pin "2"
-			(uuid "3563feb7-1eb3-456b-a565-98e1d0697794")
-		)
-		(instances
-			(project "monodeck_v2.2.0_pcb"
-				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
-					(reference "SW5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 101.6 109.22 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "cd153a69-9273-4cac-bf16-fb48add64f0d")
-		(property "Reference" "SW3"
-			(at 92.964 106.934 0)
+		(uuid "c92cfd6e-fe6e-4b63-9b28-904d7170219b")
+		(property "Reference" "S3"
+			(at 38.1 106.68 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3409,15 +5544,25 @@
 			)
 		)
 		(property "Value" "LEFT"
-			(at 92.964 109.474 0)
+			(at 38.1 109.22 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 101.6 104.14 0)
+		(property "Footprint" "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 38.1 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3425,8 +5570,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 101.6 104.14 0)
+		(property "Description" ""
+			(at 38.1 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3434,25 +5579,182 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 101.6 109.22 0)
+		(property "MF" "Global Connector Technology"
+			(at 38.1 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
 				(hide yes)
 			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "4.6mm"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CREATOR" "ASHISH"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=eda"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "A"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=snap"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SWT0211-050010GSA"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=18834140&manufacturer=Global Connector Technology&part_name=SWT0211-050010GSA&search_term=None"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "4.5 x 4.5mm Surface Mount Tactile Switch"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Global Connector Technology"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "SWT0211-050010GSA"
+			(at 38.1 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "99754857-313b-4656-bcf9-fe7124fdb311")
 		)
 		(pin "1"
-			(uuid "de208648-0184-40a8-8c23-89fe63ca1662")
+			(uuid "70dcf092-cf99-4a02-b997-d6205a6a0069")
+		)
+		(pin "4"
+			(uuid "640cbcc7-bb7e-4229-aaa6-43aae25a91a4")
 		)
 		(pin "2"
-			(uuid "3c19e313-a510-486f-89c7-081bec6a968f")
+			(uuid "1b42e81b-1c8f-4f9f-84f6-a4d62ed47f78")
 		)
 		(instances
 			(project "monodeck_v2.2.0_pcb"
 				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
-					(reference "SW3")
+					(reference "S3")
 					(unit 1)
 				)
 			)
@@ -3486,7 +5788,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical"
 			(at 196.85 55.88 0)
 			(effects
 				(font
@@ -3529,16 +5831,252 @@
 		)
 	)
 	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 101.6 120.65 0)
+		(lib_id "SWT0211-050010GSA_REVA:SWT0211-050010GSA_REVA")
+		(at 215.9 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e58b9028-7a41-4911-9a6a-143c649e587b")
-		(property "Reference" "SW7"
-			(at 91.948 119.38 0)
+		(fields_autoplaced yes)
+		(uuid "df6c4c4c-0a66-46cf-835b-26753ab3fd3f")
+		(property "Reference" "S7"
+			(at 215.9 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "SELECT"
+			(at 215.9 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MF" "Global Connector Technology"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "4.6mm"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CREATOR" "ASHISH"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=eda"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "A"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=snap"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SWT0211-050010GSA"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=18834140&manufacturer=Global Connector Technology&part_name=SWT0211-050010GSA&search_term=None"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "4.5 x 4.5mm Surface Mount Tactile Switch"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Global Connector Technology"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "SWT0211-050010GSA"
+			(at 215.9 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "e67975d5-9778-4ca4-bedc-12acee42bcec")
+		)
+		(pin "1"
+			(uuid "6555b794-a586-4082-b890-d521764afc8b")
+		)
+		(pin "4"
+			(uuid "f6e6df62-af7a-4e41-a1cf-a23ee48a7da8")
+		)
+		(pin "2"
+			(uuid "7fbdb0c9-1862-466a-87c7-cd8c1a63f2b6")
+		)
+		(instances
+			(project "monodeck_v2.2.0_pcb"
+				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
+					(reference "S7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "SWT0211-050010GSA_REVA:SWT0211-050010GSA_REVA")
+		(at 82.55 107.95 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f11a657f-e9fa-4908-a5c3-a3c239111a55")
+		(property "Reference" "S5"
+			(at 82.55 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3546,15 +6084,25 @@
 			)
 		)
 		(property "Value" "B"
-			(at 91.948 121.92 0)
+			(at 82.55 100.33 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
-			(at 101.6 115.57 0)
+		(property "Footprint" "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 82.55 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3562,8 +6110,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 101.6 115.57 0)
+		(property "Description" ""
+			(at 82.55 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3571,93 +6119,182 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 101.6 120.65 0)
+		(property "MF" "Global Connector Technology"
+			(at 82.55 107.95 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify bottom)
 				(hide yes)
 			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "4.6mm"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CREATOR" "ASHISH"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=eda"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "A"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/SWT0211-050010GSA/Global+Connector+Technology/view-part/?ref=snap"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "SWT0211-050010GSA"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Purchase-URL" "https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=18834140&manufacturer=Global Connector Technology&part_name=SWT0211-050010GSA&search_term=None"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Description_1" "4.5 x 4.5mm Surface Mount Tactile Switch"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "Global Connector Technology"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SNAPEDA_PN" "SWT0211-050010GSA"
+			(at 82.55 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "b4c48486-b706-4fe0-b706-fa2fd30fce34")
 		)
 		(pin "1"
-			(uuid "42ee8ccf-6fbd-47d6-a6ec-60c25d584d9d")
+			(uuid "d4b2d46c-e98c-4712-84d2-465354229642")
+		)
+		(pin "4"
+			(uuid "3d3a83ae-e7dd-40d8-be70-dcc79168ee50")
 		)
 		(pin "2"
-			(uuid "853a08ed-c57c-427e-9c70-d33bd3ef6577")
+			(uuid "d0df007b-a24f-458b-b083-2e6f527fcae6")
 		)
 		(instances
 			(project "monodeck_v2.2.0_pcb"
 				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
-					(reference "SW7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Switch:SW_Push")
-		(at 101.6 99.06 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "fd808659-980e-48ae-b115-ec74c99752b5")
-		(property "Reference" "SW1"
-			(at 101.6 91.44 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "UP"
-			(at 101.6 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 101.6 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 101.6 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Push button switch, generic, two pins"
-			(at 101.6 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "36f8668f-90b9-498f-a5aa-585792db0a3e")
-		)
-		(pin "2"
-			(uuid "653065f8-66db-47a9-b649-e8a1d3ffaad0")
-		)
-		(instances
-			(project ""
-				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
-					(reference "SW1")
+					(reference "S5")
 					(unit 1)
 				)
 			)
