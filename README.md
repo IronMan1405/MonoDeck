@@ -71,6 +71,14 @@ MonoDeck_v2/
 │   ├── platform_config.h  # Pin definitions, I2C config
 │   ├── platform_init.h/.c # Hardware initialisation
 │   └── platform_time.h/.c # Timing utilities
+├── hardware/
+│   ├── pcb/
+│   │   └── monodeck/
+│   │       ├── *.kicad_pro
+│   │       ├── *.kicad_sch
+│   │       ├── *.kicad_pcb
+│   │       └── (other KiCad files)
+│   └── cad/
 └── assets/                # Bitmaps, fonts
 ```
 
@@ -178,6 +186,7 @@ That's it. The menu, main loop, and state machine require no changes.
 - [x] Implement Bi-directional rotation & wall kicks in Tetricore
 - [x] UI/UX enhancements
 - [x] Fix reverse scroll
+- [ ] Replace Pico placeholder in pcb file
 
 ---
 
