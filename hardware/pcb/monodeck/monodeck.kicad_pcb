@@ -115,7 +115,7 @@
 	(net 35 "unconnected-(J1-GP2-Pad4)")
 	(net 36 "unconnected-(J1-GP3-Pad5)")
 	(net 37 "unconnected-(J1-GP5-Pad7)")
-	(net 38 "Net-(J2-VBUS)")
+	(net 38 "Net-(BAT1-Pin_1)")
 	(net 39 "unconnected-(J2-ADC_VREF-Pad15)")
 	(net 40 "unconnected-(J2-GP22-Pad9)")
 	(net 41 "unconnected-(J2-GP27-Pad12)")
@@ -128,6 +128,9 @@
 	(net 48 "unconnected-(J2-GP19-Pad5)")
 	(net 49 "unconnected-(J2-GP28-Pad14)")
 	(net 50 "unconnected-(J2-VSYS-Pad19)")
+	(net 51 "Net-(U1-Vout+)")
+	(net 52 "unconnected-(U1-Vin+-Pad1)")
+	(net 53 "unconnected-(U1-Vin--Pad2)")
 	(footprint "SWT0211-050010GSA_REVA:SW_SWT0211-050010GSA_REVA"
 		(layer "F.Cu")
 		(uuid "0909133c-6ba6-4afe-844e-ad19b84d9353")
@@ -3939,6 +3942,189 @@
 		)
 		(embedded_fonts no)
 	)
+	(footprint "TP4056-Module:TP4056-Module"
+		(layer "B.Cu")
+		(uuid "006132b0-117e-41ff-a0d3-cbe62a30aac4")
+		(at 181.75 105.15 90)
+		(property "Reference" "U1"
+			(at 13.97 10.644 270)
+			(unlocked yes)
+			(layer "B.SilkS")
+			(uuid "54138887-c482-42f4-9d9b-f2be3f5174c5")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.1)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Value" "TP4056"
+			(at 13.97 9.144 270)
+			(unlocked yes)
+			(layer "B.Fab")
+			(uuid "abb145b3-cc70-428d-973b-536757ba7ed6")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "f0b32f62-bbd0-4be3-a436-81f514fcbd65")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 270)
+			(unlocked yes)
+			(layer "B.Fab")
+			(hide yes)
+			(uuid "e231b5b0-00ba-4da9-8f49-17fd55ab1d6d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(path "/49211514-2c72-48a5-b315-8ecc17ab0fde")
+		(sheetname "/")
+		(sheetfile "monodeck.kicad_sch")
+		(attr smd)
+		(fp_line
+			(start 0 0)
+			(end 28 0)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "B.SilkS")
+			(uuid "9c4fe9e1-a694-4e66-80d1-b105b052ae10")
+		)
+		(fp_line
+			(start 28 17.2)
+			(end 28 0)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(layer "B.SilkS")
+			(uuid "4ae06211-7b56-46bd-9ee2-581d8d9e40f1")
+		)
+		(fp_line
+			(start 0 17.2)
+			(end 0 0)
+			(stroke
+				(width 0.1)
+				(type default)
+			)
+			(layer "B.SilkS")
+			(uuid "f65768db-912f-453d-bbd2-05819ae1e052")
+		)
+		(fp_line
+			(start 0 17.2)
+			(end 28 17.2)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "B.SilkS")
+			(uuid "89d0b018-87a5-4a2e-8500-60813d011847")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 13.97 7.644 270)
+			(unlocked yes)
+			(layer "B.Fab")
+			(uuid "97b776c0-bbd2-4082-a5f1-12a8c0ec0df4")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+				(justify mirror)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 2.5 15.6 90)
+			(size 2 2)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 52 "unconnected-(U1-Vin+-Pad1)")
+			(pinfunction "Vin+")
+			(pintype "power_in+no_connect")
+			(uuid "0ec07e24-85f1-4ee1-a9e7-1cae81906567")
+		)
+		(pad "2" thru_hole circle
+			(at 2.5 1.6 90)
+			(size 2 2)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 53 "unconnected-(U1-Vin--Pad2)")
+			(pinfunction "Vin-")
+			(pintype "power_in+no_connect")
+			(uuid "9fc364ec-cbef-4eea-9d28-9e94fb5df144")
+		)
+		(pad "3" thru_hole circle
+			(at 25.5 15.6 90)
+			(size 2 2)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 51 "Net-(U1-Vout+)")
+			(pinfunction "Vout+")
+			(pintype "power_out")
+			(uuid "fe59c6bf-f49b-49a3-b070-f8534aab08b8")
+		)
+		(pad "4" thru_hole circle
+			(at 25.5 1.6 90)
+			(size 2 2)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 1 "GND")
+			(pinfunction "Vout-")
+			(pintype "power_out")
+			(uuid "4602d8ea-5d16-4c94-8f5f-1ab926431ce3")
+		)
+		(pad "5" thru_hole circle
+			(at 25.5 13.06 90)
+			(size 2 2)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 38 "Net-(BAT1-Pin_1)")
+			(pinfunction "B+")
+			(pintype "power_in")
+			(uuid "0ed513df-8c30-483b-97e5-f0a614454f66")
+		)
+		(pad "6" thru_hole circle
+			(at 25.5 4.14 90)
+			(size 2 2)
+			(drill 1)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(net 1 "GND")
+			(pinfunction "B-")
+			(pintype "power_in")
+			(uuid "2f9ea92b-8d3e-4d4b-82ba-f88f0714be8e")
+		)
+		(embedded_fonts no)
+	)
 	(footprint "R1966ABLKBLKGR:SW_R1966ABLKBLKGR"
 		(layer "B.Cu")
 		(uuid "0d585f93-7393-4907-87b4-ed6528ed419e")
@@ -4393,7 +4579,7 @@
 			(drill 1.85)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 38 "Net-(J2-VBUS)")
+			(net 51 "Net-(U1-Vout+)")
 			(pintype "passive")
 			(solder_mask_margin 0.102)
 			(uuid "d296bc16-1213-4aa4-a2bf-78b27cbda866")
@@ -4754,7 +4940,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(roundrect_rratio 0.208333)
-			(net 14 "/V+")
+			(net 38 "Net-(BAT1-Pin_1)")
 			(pinfunction "Pin_1")
 			(pintype "passive")
 			(uuid "512a9d05-15be-41c4-9a1b-d1f09ae2826d")
@@ -4792,7 +4978,7 @@
 		(property "Reference" "J2"
 			(at 0 2.77 0)
 			(layer "B.SilkS")
-			(uuid "bbb9ad87-b544-47a9-a722-7af845435fe3")
+			(uuid "394aeeb9-86a8-4583-8544-95d727d7ac55")
 			(effects
 				(font
 					(size 1 1)
@@ -4804,7 +4990,7 @@
 		(property "Value" "Conn_01x20_Socket"
 			(at 0 -51.03 0)
 			(layer "B.Fab")
-			(uuid "058f2554-e9b0-438b-9eed-548f7c00255d")
+			(uuid "bbaccf19-da4a-4a44-828e-df502497d61c")
 			(effects
 				(font
 					(size 1 1)
@@ -4817,7 +5003,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "f5e6be7a-4b73-42bd-985e-b559b16c0c3e")
+			(uuid "f505e9e3-a45d-445b-a030-d03180cdb6d2")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4830,7 +5016,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "7ff732e2-8b5a-48de-9998-f5fe0153a063")
+			(uuid "03b30107-f199-4161-9e5a-ff1e2ffcd591")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5221,7 +5407,7 @@
 			(drill 1)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
-			(net 38 "Net-(J2-VBUS)")
+			(net 14 "/V+")
 			(pinfunction "VBUS")
 			(pintype "passive")
 			(uuid "88806de2-bc09-4e77-9482-2db4ccc44093")
@@ -5248,7 +5434,7 @@
 		(property "Reference" "J1"
 			(at 0 2.77 0)
 			(layer "B.SilkS")
-			(uuid "23e56774-143b-4eba-9621-e115bb60076c")
+			(uuid "15da7e77-b8eb-4065-9af4-6df1d26a2fa5")
 			(effects
 				(font
 					(size 1 1)
@@ -5260,7 +5446,7 @@
 		(property "Value" "Conn_01x20_Socket"
 			(at 0 -51.03 0)
 			(layer "B.Fab")
-			(uuid "7dba18bd-8aab-4eb5-b7c1-5fb7ab1d2f75")
+			(uuid "a675e0ed-a857-4798-a4c4-0d90ab09df85")
 			(effects
 				(font
 					(size 1 1)
@@ -5273,7 +5459,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "d95970bf-0793-4915-affc-bc215e6c670b")
+			(uuid "b7b877dc-f847-4728-987c-fc863bbf038d")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5286,7 +5472,7 @@
 			(at 0 0 0)
 			(layer "B.Fab")
 			(hide yes)
-			(uuid "f28232e9-c2cc-428a-8105-94d910089b6a")
+			(uuid "f87b1eb7-8c1c-418d-83f9-06c0c7528b0d")
 			(effects
 				(font
 					(size 1.27 1.27)
