@@ -186,7 +186,7 @@ That's it. The menu, main loop, and state machine require no changes.
 - [x] Implement Bi-directional rotation & wall kicks in Tetricore
 - [x] UI/UX enhancements
 - [x] Fix reverse scroll
-- [ ] Replace Pico placeholder in pcb file
+- [ ] Add TP4056 for battery charging, route traces and finish pcb
 
 ---
 
