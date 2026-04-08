@@ -3595,10 +3595,22 @@
 		(uuid "1e52886c-1a29-42f3-9ba4-130a4e87c283")
 	)
 	(junction
+		(at 125.73 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2e071717-aee1-4460-bb22-161cdb510f65")
+	)
+	(junction
 		(at 107.95 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "378bd6b2-dc63-4d9e-afec-2de106e15f5e")
+	)
+	(junction
+		(at 119.38 157.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4d0bb4b2-70e3-427d-ba34-fb990137bdf6")
 	)
 	(junction
 		(at 101.6 128.27)
@@ -4194,6 +4206,16 @@
 		)
 		(uuid "219f47fb-54a3-481e-9d3d-7b2b46271401")
 	)
+	(wire
+		(pts
+			(xy 119.38 157.48) (xy 125.73 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "23da7bab-d682-4406-ab99-3a1c4e430994")
+	)
 	(bus
 		(pts
 			(xy 231.14 102.87) (xy 231.14 113.03)
@@ -4764,6 +4786,16 @@
 		)
 		(uuid "d242f16f-8e2b-45c1-a8cc-14d4f9ed002f")
 	)
+	(wire
+		(pts
+			(xy 113.03 157.48) (xy 119.38 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4661816-2b5b-43f4-b29f-a1b274ddd6e8")
+	)
 	(bus
 		(pts
 			(xy 64.77 125.73) (xy 64.77 133.35)
@@ -4813,6 +4845,16 @@
 			(type default)
 		)
 		(uuid "d6e429c4-fbe0-490f-af2b-927f28cd5ba8")
+	)
+	(wire
+		(pts
+			(xy 125.73 157.48) (xy 132.08 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d807e3f4-12d0-406f-a778-b8b4afe410d8")
 	)
 	(wire
 		(pts
@@ -5719,6 +5761,72 @@
 			(project "monodeck_v2.2.0_pcb"
 				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
 					(reference "S2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 113.03 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "244b4480-e265-490b-acb2-134d1ff11e0e")
+		(property "Reference" "#PWR07"
+			(at 113.03 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 113.03 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 113.03 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 113.03 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 113.03 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bfc9a126-4298-4216-86f4-26d9b102debd")
+		)
+		(instances
+			(project "monodeck"
+				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -7068,6 +7176,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 132.08 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9d282eaa-f76e-41ca-9f1e-0c140bd96c19")
+		(property "Reference" "#PWR010"
+			(at 132.08 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND3"
+			(at 132.08 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 132.08 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 132.08 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 132.08 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "07675401-7b2d-4065-8c79-ca8a68a56466")
+		)
+		(instances
+			(project "monodeck"
+				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
+					(reference "#PWR010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 167.64 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7362,6 +7536,138 @@
 			(project "monodeck_v2.2.0_pcb"
 				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
 					(reference "S6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND1")
+		(at 119.38 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "a3c91c83-a42f-467b-8663-34ef96cba63b")
+		(property "Reference" "#PWR09"
+			(at 119.38 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND1"
+			(at 119.38 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 119.38 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND1\" , ground"
+			(at 119.38 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3ca3826b-dc75-47d6-9d44-90cac7192c77")
+		)
+		(instances
+			(project "monodeck"
+				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
+					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND2")
+		(at 125.73 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "c6d308bf-29ab-4b69-9911-1e6357210a9d")
+		(property "Reference" "#PWR08"
+			(at 125.73 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND2"
+			(at 125.73 162.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 125.73 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 125.73 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND2\" , ground"
+			(at 125.73 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "90925168-b866-48eb-8ce2-54c2298a54a5")
+		)
+		(instances
+			(project "monodeck"
+				(path "/b6c6e953-c84d-46ed-bda1-7cb32900aaaa"
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
