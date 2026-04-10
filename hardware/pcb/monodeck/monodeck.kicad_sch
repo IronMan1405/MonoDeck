@@ -5126,7 +5126,7 @@
 		)
 		(uuid "9208a9c5-3ed2-4e81-ace8-cca22713a4c5")
 	)
-	(label "GPIO11"
+	(label "GPIO12"
 		(at 58.42 96.52 180)
 		(effects
 			(font
@@ -5186,7 +5186,7 @@
 		)
 		(uuid "c8e3f8c2-f25d-40bd-82bc-4546603a1e92")
 	)
-	(label "GPIO10"
+	(label "GPIO11"
 		(at 50.8 83.82 0)
 		(effects
 			(font
@@ -5236,7 +5236,7 @@
 		)
 		(uuid "d9f522bf-22f1-458a-b0ce-d91e38622bc6")
 	)
-	(label "GPIO13"
+	(label "GPIO10"
 		(at 50.8 132.08 0)
 		(effects
 			(font
@@ -5266,7 +5266,7 @@
 		)
 		(uuid "e71c5f82-1cdf-4117-97b8-7caf79f9c8e0")
 	)
-	(label "GPIO12"
+	(label "GPIO13"
 		(at 50.8 119.38 0)
 		(effects
 			(font
