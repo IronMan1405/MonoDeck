@@ -6,11 +6,11 @@
 #define I2C_BAUDRATE 400000
 #define DISPLAY_I2C_ADDRESS 0x3c
 
-#define BTN_UP_PIN 10
-#define BTN_DOWN_PIN 11
-#define BTN_LEFT_PIN 12
-#define BTN_RIGHT_PIN 13
-#define BTN_A_PIN 14
-#define BTN_B_PIN 15
-#define BTN_SEL_PIN 20
-#define BTN_START_PIN 21
+#define BTN_UP_PIN 11
+#define BTN_DOWN_PIN 12
+#define BTN_LEFT_PIN 13
+#define BTN_RIGHT_PIN 10
+#define BTN_A_PIN 20
+#define BTN_B_PIN 21
+#define BTN_SEL_PIN 3
+#define BTN_START_PIN 2

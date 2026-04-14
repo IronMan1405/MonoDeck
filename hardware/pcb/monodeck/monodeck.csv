@@ -1,0 +1,14 @@
+"Id";"Designator";"Footprint";"Quantity";"Designation";"Supplier and ref";
+1;"S5";"SW_SWT0211-050010GSA_REVA";1;"B";;;
+2;"OLED1";"PinSocket_1x04_P2.54mm_Vertical";1;"Conn_01x04_Socket";;;
+3;"S1";"SW_SWT0211-050010GSA_REVA";1;"UP";;;
+4;"S8";"SW_SWT0211-050010GSA_REVA";1;"START";;;
+5;"S7";"SW_SWT0211-050010GSA_REVA";1;"SELECT";;;
+6;"S4";"SW_SWT0211-050010GSA_REVA";1;"RIGHT";;;
+7;"S3";"SW_SWT0211-050010GSA_REVA";1;"LEFT";;;
+8;"S2";"SW_SWT0211-050010GSA_REVA";1;"DOWN";;;
+9;"S6";"SW_SWT0211-050010GSA_REVA";1;"A";;;
+10;"U1";"TP4056-Module";1;"TP4056";;;
+11;"PWR1";"SW_R1966ABLKBLKGR";1;"R1966ABLKBLKGR";;;
+12;"BAT1";"JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical";1;"Conn_01x02";;;
+13;"J2,J1";"PinSocket_1x20_P2.54mm_Vertical";2;"Conn_01x20_Socket";;;
