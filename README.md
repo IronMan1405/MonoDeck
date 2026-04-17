@@ -181,7 +181,7 @@ Game games[] = {
 - [x] Refine Scoring methods
 - [ ] Add levels & game modes
 - [x] Add PCB files 
-- [ ] Add enclosure CAD files 
+- [x] Add enclosure CAD files 
 - [x] Implement Bi-directional rotation & wall kicks in Tetricore
 - [x] UI/UX enhancements
 - [x] Fix reverse scroll
