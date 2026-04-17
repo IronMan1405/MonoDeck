@@ -35,12 +35,14 @@ The display communicates over I2C. Default pin configuration is defined in `plat
 |---------------|-----------|
 | OLED SDA | GPIO 8 |
 | OLED SCL | GPIO 9 |
-| Up Button | GPIO 10 |
-| Down Button | GPIO 11 |
-| Left Button | GPIO 12 |
-| Right Button | GPIO 13 |
-| A Button | GPIO 14 |
-| B Button | GPIO 15 |
+| Up Button | GPIO 11 |
+| Down Button | GPIO 12 |
+| Left Button | GPIO 13 |
+| Right Button | GPIO 10 |
+| A Button | GPIO 20 |
+| B Button | GPIO 21 |
+| SEL Button | GPIO 3 |
+| START Button | GPIO 2 |
 
 ---
 
@@ -181,7 +183,7 @@ Game games[] = {
 - [x] Refine Scoring methods
 - [ ] Add levels & game modes
 - [x] Add PCB files 
-- [ ] Add enclosure CAD files 
+- [x] Add enclosure CAD files 
 - [x] Implement Bi-directional rotation & wall kicks in Tetricore
 - [x] UI/UX enhancements
 - [x] Fix reverse scroll

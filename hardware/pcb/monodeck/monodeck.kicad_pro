@@ -509,7 +509,7 @@
       "plot": "/home/dakshesh/MonoDeck/hardware/pcb/gerbers/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../../cad/monodeck_pcb.step",
       "svg": "",
       "vrml": ""
     },
