@@ -4,6 +4,7 @@
 #include "pico/stdlib.h"
 #include "hardware/i2c.h"
 #include "hardware/gpio.h"
+#include "hardware/adc.h"
 
 void platform_init(void) {
     stdio_init_all();
@@ -14,6 +15,10 @@ void platform_init(void) {
 
     gpio_pull_up(I2C_SDA_PIN);
     gpio_pull_up(I2C_SCL_PIN);
+
+    adc_init();
+    adc_gpio_init(26);
+    adc_select_input(0);
 
     const uint8_t buttons[] = {
         BTN_UP_PIN,

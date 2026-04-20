@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "hardware/adc.h"
 
 #include "breakout.h"
 #include "drivers/sh110x/sh110x.h"
@@ -12,8 +13,8 @@
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
 
-#define MIN(a,b) ((a) < (b) ? (a) : (b))
-#define MAX(a,b) ((a) > (b) ? (a) : (b))
+// #define MIN(a,b) ((a) < (b) ? (a) : (b))
+// #define MAX(a,b) ((a) > (b) ? (a) : (b))
 
 static bool canExit = true;
 
@@ -60,7 +61,9 @@ static void drawBreakoutExitWarning();
 
 
 void initBreakout(void) {
-    srand(platform_millis());
+    // srand(platform_millis());
+    uint32_t seed = adc_read() ^ platform_millis();
+    srand(seed);
 
     sh110x_clear();
     sh110x_update();

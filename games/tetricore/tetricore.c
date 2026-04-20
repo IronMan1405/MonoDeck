@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdint.h>
+#include "hardware/adc.h"
 
 #include "tetricore.h"
 #include "drivers/sh110x/sh110x.h"
@@ -132,11 +133,12 @@ static bool getCell(Shapes type, int rot, int x, int y);
 
 
 void initTetricore(void) {
-    srand(platform_millis());
+    // srand(platform_millis());
+    uint32_t seed = adc_read() ^ platform_millis();
+    srand(seed);
     
     sh110x_clear();
     sh110x_update();
-
     
     canExit = false;
     

@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "hardware/adc.h"
 
 #include "snake.h"
 #include "drivers/sh110x/sh110x.h"
@@ -40,7 +41,9 @@ static void drawSnakePause();
 static void drawSnakeExitWarning();
 
 void initSnake(void) {
-    srand(platform_millis());
+    // srand(platform_millis());
+    uint32_t seed = adc_read() ^ platform_millis();
+    srand(seed);
 
     sh110x_clear();
     sh110x_update();

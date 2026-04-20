@@ -8,10 +8,11 @@ A compact, handheld game console built around the Raspberry Pi Pico 2 W, featuri
 
 | Game | Description |
 |------|-------------|
-| Snake | Classic snake with high score tracking |
+| Snake | Classic snake |
 | Pong | One-paddle pong |
 | Breakout | Block-breaking arcade game |
 | Tetricore | Tetris-style falling block game |
+| Flappy | Flappy bird style arcade runner game |
 
 ---
 
@@ -173,6 +174,62 @@ Game games[] = {
     {"MyGame",    initMyGame,    updateMyGame,    drawMyGame},  // add this
 };
 ```
+
+### 3. Add highscore storage for the game
+
+Open `platform/storage_map.h` and add the entry:
+
+```c
+typedef struct {
+    uint32_t magic;
+    uint16_t snake_hs;
+    uint16_t pong_hs;
+    uint16_t breakout_hs;
+    uint16_t tetricore_hs;
+    uint16_t mygame_hs;    // add this
+    uint8_t  _pad[256 - 12];
+} StoragePage;
+
+#define STORAGE_MYGAME_HIGHSCORE_OFFSET 0x008   // add this, make sure to keep the offset of the new game by 2 from the previous game
+```
+
+Next open `platform/platform_storage.c` in the definition of ```loadStorage()``` add:
+
+```c
+void loadStorage(void) {
+    ...
+
+    if (page.magic == STORAGE_MAGIC) {
+        gStorage = page;
+    } else {
+        gStorage.magic = STORAGE_MAGIC;
+        gStorage.snake_hs = 0;
+        gStorage.pong_hs = 0;
+        gStorage.breakout_hs = 0;
+        gStorage.tetricore_hs = 0;
+        gStorage.mygame_hs = 0;     // add this
+    }
+}
+```
+
+And initialize it in your game's init function in `games/mygame/mygame.c`:
+
+```c
+#include "platform/platform_storage.h"
+
+void initMyGame(void) {
+    ...
+
+    loadStorage();
+    highScore = gStorage.mygame_hs;
+
+    if (highScore < 0 || highScore > 999) highScore = 0;
+
+    ...
+}
+```
+
+*(Note: you can set the upper limit of highscore to anything, i have set it as 999 for most games, and 99999 for tetricore)*
 
 ---
 
