@@ -13,6 +13,7 @@ A compact, handheld game console built around the Raspberry Pi Pico 2 W, featuri
 | Breakout | Block-breaking arcade game |
 | Tetricore | Tetris-style falling block game |
 | Flappy | Flappy bird style arcade runner game |
+| Conway's Game of Life | A zero Player game (find out if you don't know ) |
 
 ---
 
