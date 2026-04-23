@@ -15,6 +15,7 @@ typedef struct {
     uint16_t breakout_hs;
     uint16_t tetricore_hs;
     uint16_t flappy_hs;
+    uint16_t mines_hs;
     uint8_t  _pad[256 - 12];
 } StoragePage;
 
@@ -25,6 +26,7 @@ typedef struct {
 #define STORAGE_BREAKOUT_HIGHSCORE_OFFSET 0x004
 #define STORAGE_TETRICORE_HIGHSCORE_OFFSET 0x006
 #define STORAGE_FLAPPY_HIGHSCORE_OFFSET 0x008
+#define STORAGE_MINES_HIGHSCORE_OFFSET 0x010
 
 #define STORAGE_BASE_ADDR ((const uint8_t *)(XIP_BASE + STORAGE_FLASH_OFFSET))
 #define STORAGE_ADDR(offset) ((const uint8_t *)(XIP_BASE + STORAGE_FLASH_OFFSET + (offset)))

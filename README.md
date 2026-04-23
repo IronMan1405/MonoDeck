@@ -14,7 +14,7 @@ A compact, handheld game console built around the Raspberry Pi Pico 2 W, featuri
 | Tetricore | Tetris-style falling block game |
 | Flappy | Flappy bird style arcade runner game |
 | Conway's Game of Life | A zero Player game (find out if you don't know ) |
-
+| Mines | Minesweeper |
 ---
 
 ## Hardware
@@ -191,7 +191,8 @@ typedef struct {
     uint8_t  _pad[256 - 12];
 } StoragePage;
 
-#define STORAGE_MYGAME_HIGHSCORE_OFFSET 0x008   // add this, make sure to keep the offset of the new game by 2 from the previous game
+// add this, make sure to keep the offset of the new game by 2 from the previous game
+#define STORAGE_MYGAME_HIGHSCORE_OFFSET 0x008
 ```
 
 Next open `platform/platform_storage.c` in the definition of ```loadStorage()``` add:

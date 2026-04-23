@@ -52,6 +52,7 @@ add_executable(MonoDeck_v2
     games/pong/pong.c
     games/tetricore/tetricore.c
     games/flappy/flappy.c
+    games/mines/mines.c
     games/conwaysgol/conwaysgol.c
     assets/monodeck_logo.c
     app_registry/app_registry.c
@@ -73,6 +74,7 @@ target_include_directories(MonoDeck_v2 PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/drivers/sh110x
         ${CMAKE_CURRENT_LIST_DIR}/drivers/buttons
         ${CMAKE_CURRENT_LIST_DIR}/games
+        ${CMAKE_CURRENT_LIST_DIR}/games/mines
         ${CMAKE_CURRENT_LIST_DIR}/games/snake
         ${CMAKE_CURRENT_LIST_DIR}/games/breakout
         ${CMAKE_CURRENT_LIST_DIR}/games/pong

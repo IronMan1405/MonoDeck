@@ -35,6 +35,7 @@ void loadStorage(void) {
         gStorage.breakout_hs = 0;
         gStorage.tetricore_hs = 0;
         gStorage.flappy_hs = 0;
+        gStorage.mines_hs = 0;
     }
 }
 
