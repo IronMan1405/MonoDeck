@@ -56,6 +56,7 @@ add_executable(MonoDeck_v2
     games/conwaysgol/conwaysgol.c
     assets/monodeck_logo.c
     app_registry/app_registry.c
+    games/clock/clock.c
 )
 
 pico_set_program_name(MonoDeck_v2 "MonoDeck_v2")
@@ -74,6 +75,7 @@ target_include_directories(MonoDeck_v2 PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}/drivers/sh110x
         ${CMAKE_CURRENT_LIST_DIR}/drivers/buttons
         ${CMAKE_CURRENT_LIST_DIR}/games
+        ${CMAKE_CURRENT_LIST_DIR}/games/clock
         ${CMAKE_CURRENT_LIST_DIR}/games/mines
         ${CMAKE_CURRENT_LIST_DIR}/games/snake
         ${CMAKE_CURRENT_LIST_DIR}/games/breakout

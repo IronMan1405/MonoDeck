@@ -6,6 +6,7 @@
 #include "games/flappy/flappy.h"
 #include "games/conwaysgol/conwaysgol.h"
 #include "games/mines/mines.h"
+#include "games/clock/clock.h"
 
 #include <string.h>
 
@@ -16,7 +17,8 @@ Game games[] = {
     {"Tetricore", initTetricore, updateTetricore, drawTetricore},
     {"Flappy", initFlappy, updateFlappy, drawFlappy},
     {"Conway's GOL", initConway, updateConway, drawConway},
-    {"Mines", initMines, updateMines, drawMines}
+    {"Mines", initMines, updateMines, drawMines},
+    {"Clock", initClock, updateClock, drawClock}
 };
 
 const int gameCount = sizeof(games) / sizeof(games[0]);
