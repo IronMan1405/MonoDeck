@@ -3,10 +3,10 @@
 #include "buttons.h"
 #include "platform/platform_config.h"
 
-static const int pins[] = {BTN_UP_PIN, BTN_DOWN_PIN, BTN_LEFT_PIN, BTN_RIGHT_PIN, BTN_A_PIN, BTN_B_PIN, BTN_SEL_PIN, BTN_START_PIN};
+static const int pins[] = {BTN_UP_PIN, BTN_DOWN_PIN, BTN_LEFT_PIN, BTN_RIGHT_PIN, BTN_B_PIN, BTN_A_PIN, BTN_SEL_PIN, BTN_START_PIN};
 
 void buttons_init(void) {
-    for (int i = 0; i < 6; i++) {
+    for (int i = 0; i < (int)(sizeof(pins) / sizeof(pins[0])); i++) {
         gpio_init(pins[i]);
         gpio_set_dir(pins[i], GPIO_IN);
         gpio_pull_up(pins[i]); //active low
@@ -14,5 +14,8 @@ void buttons_init(void) {
 }
 
 bool buttons_read(int button_id) {
+    if (button_id < 0 || button_id >= (int)(sizeof(pins) / sizeof(pins[0]))) {
+        return false;
+    }
     return !gpio_get(pins[button_id]); //invert because pull up
 }

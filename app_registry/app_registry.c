@@ -7,6 +7,7 @@
 #include "games/conwaysgol/conwaysgol.h"
 #include "games/mines/mines.h"
 #include "games/clock/clock.h"
+#include "games/scope/scope.h"
 
 #include <string.h>
 
@@ -18,7 +19,8 @@ Game games[] = {
     {"Flappy", initFlappy, updateFlappy, drawFlappy},
     {"Conway's GOL", initConway, updateConway, drawConway},
     {"Mines", initMines, updateMines, drawMines},
-    {"Clock", initClock, updateClock, drawClock}
+    {"Clock", initClock, updateClock, drawClock},
+    {"Scope", initScope, updateScope, drawScope}
 };
 
 const int gameCount = sizeof(games) / sizeof(games[0]);
