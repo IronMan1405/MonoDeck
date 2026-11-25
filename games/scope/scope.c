@@ -21,6 +21,8 @@ static bool frozen;
 static bool canExit;
 static uint8_t phase = 0;
 
+static WaveformType waveform = WAVE_SINE;
+
 static const uint8_t sineTable[32] = {
     128, 153, 177, 199, 218, 234, 246, 253,
     255, 253, 246, 234, 218, 199, 177, 153,
@@ -39,6 +41,8 @@ void initScope(void) {
     frozen = false;
     canExit = false;
     phase = 0;
+
+    waveform = WAVE_SINE;
 
     generateSamples();
 
@@ -65,13 +69,19 @@ void updateScope(void) {
         phase++;
         generateSamples();
     }
+
+    if (isPressed(BTN_SEL)) {
+        waveform = (waveform + 1) % WAVE_COUNT;
+        phase = 0;
+        generateSamples();
+    }
 }
 
 void drawScope(void) {
     sh110x_clear();
 
     drawHeader();
-    drawGrid();
+    // drawGrid();
     drawWaveform();
     drawFooter();
 
@@ -84,7 +94,27 @@ void drawScope(void) {
 
 static void generateSamples(void) {
     for (int i = 0; i < SAMPLE_COUNT; i++) {
-        uint8_t value = sineTable[(i + phase) % 32];
+        int position = (i + phase) % 32;
+        int value = 128;
+
+        switch (waveform) {
+            case WAVE_SINE:
+                value = sineTable[position];
+                break;
+
+            case WAVE_SQUARE:
+                value = (position < 16) ? 255 : 0;
+                break;
+
+            case WAVE_TRIANGLE:
+                value = (position < 16)
+                    ? position * 16
+                    : 255 - (position - 16) * 16;
+                break;
+
+            default:
+                break;
+        }
 
         samples[i] = 2048 + ((int)value - 128) * 11;
     }
@@ -132,7 +162,14 @@ static void drawWaveform(void) {
 }
 
 static void drawHeader(void) {
+    const char *waveNames[] = {
+        "SIN",
+        "SQR",
+        "TRI"
+    };
+
     sh110x_draw_text(2, 1, "SCOPE", 1);
+    sh110x_draw_text(42, 1, waveNames[waveform], 1);
     sh110x_draw_text(78, 1, frozen ? "CH1 HOLD" : "CH1 LIVE", 1);
     sh110x_draw_line(0, 8, 127, 8);
 }
@@ -141,5 +178,6 @@ static void drawFooter(void) {
     sh110x_draw_line(0, 47, 127, 47);
 
     sh110x_draw_text(2, 48, "1V/D 500uS/D", 1);
-    sh110x_draw_text(2, 56, "A:HOLD B:EXIT", 1);
+    sh110x_draw_text(2, 56, "A:HOLD SEL:WAVE", 1);
+    sh110x_draw_text(98, 56, "B:EXIT", 1);
 }
